@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+.restaurant {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+.restaurant-img {
+    border-radius: 5px 0 0 5px;
+    margin-right: 35px;
+    flex-grow: initial;
+}
+
+.restaurant-info {
+    padding: 10px;
+    font-family: "Poppins", monospace;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.restaurant-info div {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    word-wrap: break-word;
+}
+.restaurant-info img {
+    width: 16px;
+    margin-right: 7px;
+}
+
+.restaurant-info .restaurant-name {
+    font-weight: 900;
+    font-size: 22px;
+}
+
+.restaurant-info .restaurant-category {
+    color: #313131;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* .restaurant-address {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+}
+
+.restaurant-schedule {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+}
+
+.restaurant-review {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+}
+
+.restaurant-rating {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+} */
