@@ -5,12 +5,16 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .restaurant-img {
-    border-radius: 5px 0 0 5px;
-    margin-right: 35px;
-    flex-grow: initial;
+    border-radius: 5px 5px 0 5px;
+    width: 100%;
+    height: 200px;
+    /* width: 75%; */
+    object-fit: cover;
 }
 
 .restaurant-info {
@@ -25,11 +29,14 @@
 
 .restaurant-info div {
     color: black;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     display: flex;
     word-wrap: break-word;
+    margin-bottom: 5px;
+    align-content: center;
 }
+
 .restaurant-info img {
     width: 16px;
     margin-right: 7px;
@@ -37,14 +44,64 @@
 
 .restaurant-info .restaurant-name {
     font-weight: 900;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 .restaurant-info .restaurant-category {
     color: #313131;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
 }
+
+@media only screen and (min-width: 1280px) {
+    .restaurant {
+        flex-direction: row;
+        margin: 0 230px 30px 230px;
+    }
+    
+    .restaurant-img {
+        max-width: 220px;
+        width: 100%;
+        border-radius: 5px 0 0 5px;
+        margin-right: 35px;
+        flex-grow: initial;
+    }
+    
+    /* .restaurant-info {
+        padding: 10px;
+        font-family: "Poppins", monospace;
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+    } */
+    
+    .restaurant-info div {
+        font-size: 15px;
+    }
+
+    .restaurant-info div span {
+        align-items:center;
+    }
+    
+    .restaurant-info img {
+        width: 16px;
+        margin-right: 7px;
+    }
+    
+    .restaurant-info .restaurant-name {
+        font-weight: 900;
+        font-size: 22px;
+    }
+    
+    .restaurant-info .restaurant-category {
+        color: #313131;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
 
 /* .restaurant-address {
     color: black;
