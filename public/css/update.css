@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    text-decoration: none;
+}
+body{
+    display: flex;
+    background-color: #F5F5F5;
+    flex-direction: row;
+}
+.sidebar{
+    background-color: #313131;
+    width: 60vw;
+    max-width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    letter-spacing: 1px;
+    transition: 0.6s ease-in-out;
+    display: none;
+}
+.logo{
+    padding: 20px;
+    height: max-content;
+}
+.logo img{
+    height: max-content;
+    object-fit: cover;
+    user-select: none;
+    width: 100%;
+}
+.menu ul{
+    display: flex;
+    flex-direction: column;
+}
+.menu ul a{
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    height: 50px;
+    padding-left: 20px;
+    font-weight: 700;
+}
+.menu ul .active a{
+    background-color: #FFF177;
+    color: #000000;
+}
+.menu ul a:hover{
+    background-color: #FFF177;
+    color: #000000;
+}
+.menu ul li {
+    list-style: none;
+}
+#menu-btn{
+    padding: 35px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #F5F5F5;
+}
+#menu-btn:hover{
+    color: #fc6f41;
+}
+.sidebar.active{
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s ease-in-out;
+    width: 100%;
+}
+.restaurant-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#add-btn{
+    position: fixed;
+    bottom: 3vw;
+    right: 3vw;
+}
+#add-btn img{
+    height: 65px;
+}
