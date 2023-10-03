@@ -10,91 +10,11 @@
 html{
     overflow-x: hidden;
 }
-.body{
-    display: flex;
+body{
     align-items: center;
     justify-content: center;
     background-color: #F5F5F5;
     flex-direction: column;
-}
-.header{
-    position: sticky;
-    top: 0; left: 0; right: 0;
-    height: 127px;
-    background-color: #313131;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 999;
-}
-.header .logo{
-    background-color: #313131;
-    padding-left: 30px;
-    padding-top: 10px;
-}
-.header .navbar{
-    padding-right: 30px;
-    display: flex;
-}
-.header .navbar a{
-    height: 40px;
-    margin: 2px;
-    padding: 0 22px;
-    font-size: 1.75vh;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    transition: 0.6s ease-in-out;
-    font-weight: 700;
-}
-.menu ul{
-    display: flex;
-    justify-content: space-between;
-}
-.menu ul a{
-    display: flex;
-    color: #ffffff;
-    align-items: center;
-}
-.menu ul .active a{
-    background-color: #FFC977;
-    color: #000000;
-}
-.menu ul a:hover{
-    background-color: #FFC977;
-    color: #000000;
-}
-.menu ul li {
-    list-style: none;
-}
-.login{
-    line-height: 43px;
-    color: #000000;
-    background-color: #FFF177;
-}
-.login:hover{
-    background-color: #fc6f41;
-    color: #fff;
-}
-.signup{
-    line-height: 38px;
-    color: #FFF177;
-    border-color: #FFF177;
-    border-style: solid;
-}
-.signup:hover{
-    border-color: #fc6f41;
-    color: #fc6f41;
-}
-#menu-btn{
-    padding: 35px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #FFF177;
-    display: none;
-}
-#menu-btn:hover{
-    color: #fc6f41;
 }
 .wrapper{
     display: flex;
@@ -180,25 +100,4 @@ html{
 span{
     color: #FFF177;
     font-weight: 700;
-}
-
-@media (max-width: 800px){
-    #menu-btn{
-        display: inline-block;
-        transition: transform 0.1s ease;
-    }
-    #menu-btn.active{
-        transform: rotate(0.25turn);
-    }
-    .header .navbar{
-        display: none;
-    }
-    .header .navbar.active{
-        position: absolute;
-        display: grid;
-        top: 99%; left: 0; right: 0;
-        background-color: #313131;
-        padding: 2rem;
-        text-align: center; 
-    }
 }

@@ -11,6 +11,7 @@ $page = "Home";
     <title><?php echo $title; ?></title>
     <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
     <link rel="stylesheet" href="../../../public/css/home.css"/>
+    <link rel="stylesheet" href="../../../public/css/navbar.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
@@ -40,7 +41,7 @@ $page = "Home";
         <div class="desc2"> Explore a diverse array of local dining establishments and their mouthwatering offerings, all at your fingertips. From the sizzling street food stalls to cozy family-owned eateries, our app is your gateway to an unforgettable culinary adventure in Jatinangor. </div>
     </section>
     <section class="footer">
-        <div class="credit"> created by <span>H Team</span> | all rights reserved! </div>
+        <div class="credit"> created by <a href="..\update\index.php"><span>H Team </span></a> | all rights reserved! </div>
     </section>
 <script src="../../../public/js/navbar.js"></script>
 <script src="../../../public/js/slider.js"></script>
