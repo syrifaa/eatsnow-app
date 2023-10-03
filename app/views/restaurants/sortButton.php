@@ -8,7 +8,7 @@ function echoSortButton()
                 <span class="selected">alphabet</span>
                 <div class="caret"></div>
             </div>
-            <ul class="menu">
+            <ul class="menu-sort">
                 <li class="active">alphabet</li>
                 <li>rating</li>
                 <li>review</li>

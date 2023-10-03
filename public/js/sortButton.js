@@ -4,15 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdowns.forEach(dropdown => {
         const select = dropdown.querySelector('.select');
         const caret = dropdown.querySelector('.caret');
-        const menu = dropdown.querySelector('.menu');
-        const menuItems = dropdown.querySelectorAll('.menu li');
+        const menu = dropdown.querySelector('.menu-sort');
+        const menuItems = dropdown.querySelectorAll('.menu-sort li');
         const selected = dropdown.querySelector('.selected');
 
 
         select.addEventListener('click', () => {
             select.classList.toggle('select-clicked');
             caret.classList.toggle('caret-rotate');
-            menu.classList.toggle('menu-open');
+            menu.classList.toggle('menu-sort-open');
         });
 
         menuItems.forEach(item => {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 selected.innerText = item.innerText;
                 select.classList.remove('select-clicked');
                 caret.classList.remove('caret-rotate');
-                menu.classList.remove('menu-open');
+                menu.classList.remove('menu-sort-open');
                 menuItems.forEach(item => {
                     item.classList.remove('active');
                 });

@@ -1,9 +1,9 @@
 <?php
-include_once 'C:\Users\KennyB\Desktop\WBD\tugas-besar-1\app\views\navbar\navbar.php';
+// include_once 'C:\Users\KennyB\Desktop\WBD\tugas-besar-1\app\views\navbar\navbar.php';
 include_once 'sortButton.php';
 include_once 'restaurantCard.php';
 $title  = "EatsNow";
-$page = "Home";
+$page = "Restaurant";
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +11,14 @@ $page = "Home";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/sortButton.css" />
-    <link rel="stylesheet" type="text/css" href="/public/css/restaurantCard.css" />
-    <link rel="stylesheet"  type="text/css" href="/public/css/restaurants.css" />
-    <script src="/public/js/sortButton.js"></script>
+    <title><?php echo $title; ?></title>
+    <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
+    <link rel="stylesheet" type="text/css" href="../../../public/css/sortButton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../public/css/restaurantCard.css" />
+    <link rel="stylesheet"  type="text/css" href="../../../public/css/restaurants.css" />
+    <link rel="stylesheet" href="../../../public/css/navbar.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="../../../public/js/sortButton.js"></script>
 </head>
 <body>
     <section class="header">
@@ -23,26 +26,30 @@ $page = "Home";
             <img src="../../../public/assets/img/logo1.png"/>
         </a>
         <nav class="navbar">
-            <?php echoNavbar($page) ?>
-            <!-- <a href="login.php" class="login">Login</a>
-            <a href="signup.php" class="signup">SignUp</a> -->
+            <?php include "../navbar/index.php"; ?>
+            <a href="login.php" class="login">Login</a>
+            <a href="signup.php" class="signup">SignUp</a>
         </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>
+    <section class="menu-scroll">
+        <div class="search-sort-filter">
+            <input type="text" placeholder="Search" class="search">
+            <div class="sort-filter">
+                <div class="sort"> <?php echoSortButton() ?> </div>
+                <div class="filter"> <?php echoSortButton() ?> </div>
+            </div>
+        </div>
 
-    <div class="search-sort-filter">
-        <input type="text" placeholder="Search" class="search">
-        <div class="sort"> <?php echoSortButton() ?> </div>
-        <div class="filter"> <?php echoSortButton() ?> </div>
-    </div>
-
-    <!-- LIST OF RESTAURANTS -->
-    <div class="restaurant-list">
-        <?php generateCard() ?>
-        <?php generateCard() ?>
-        <?php generateCard() ?>
-        <?php generateCard() ?>
-        <?php generateCard() ?>
-    </div>
+        <!-- LIST OF RESTAURANTS -->
+        <div class="restaurant-list">
+            <?php generateCard() ?>
+            <?php generateCard() ?>
+            <?php generateCard() ?>
+            <?php generateCard() ?>
+            <?php generateCard() ?>
+        </div>
+    </section>
+<script src="../../../public/js/navbar.js"></script>
 </body>
 </html>
