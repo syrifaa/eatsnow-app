@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['login'])) {
+    echo "<script>location.href='../home/index.php'</script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
