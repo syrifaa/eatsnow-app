@@ -27,5 +27,8 @@
         </u>
         </form>
     </div>
+    <a href="../home/index.php" id="back-btn">
+        <img src="../../../public/assets/img/back.png" alt="img">
+    </a>
 </body>
 </html>
