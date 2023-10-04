@@ -27,8 +27,8 @@ $page = "Restaurant";
         </a>
         <nav class="navbar">
             <?php include "../navbar/index.php"; ?>
-            <a href="login.php" class="login">Login</a>
-            <a href="signup.php" class="signup">SignUp</a>
+            <a href="../login/index.php" class="login">Login</a>
+            <a href="../signup/index.php" class="signup">SignUp</a>
         </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>
@@ -43,11 +43,11 @@ $page = "Restaurant";
 
         <!-- LIST OF RESTAURANTS -->
         <div class="restaurant-list">
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
+            <?php generateCard("../restaurantPage/index.php") ?>
+            <?php generateCard("../restaurantPage/index.php") ?>
+            <?php generateCard("../restaurantPage/index.php") ?>
+            <?php generateCard("../restaurantPage/index.php") ?>
+            <?php generateCard("../restaurantPage/index.php") ?>
         </div>
     </section>
 <script src="../../../public/js/navbar.js"></script>

@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins');
-
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/font/Poppins-Medium.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
 * {
     margin: 0;
     padding: 0;
@@ -10,21 +14,80 @@
 html {
     overflow-x: hidden;
 }
-
-.body {
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #F5F5F5;
     flex-direction: column;
 } 
+.content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 85%;
+}
+.restaurant-info {
+    font-family: "Poppins", monospace;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    margin: 20px 0;
+}
+.restaurant-desc{
+    margin: 20px 0;
+}
+.restaurant-info div {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    word-wrap: break-word;
+    margin-bottom: 7px;
+    align-content: center;
+}
+.restaurant-info img {
+    width: 16px;
+    margin-right: 7px;
+}
+.restaurant-info .restaurant-name {
+    font-weight: 800;
+    font-size: 40px;
+}
+.restaurant-info .restaurant-category {
+    color: #313131;
+    font-size: 12px;
+    font-weight: 500;
+}
+.menu-label{
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.menu-list{
+    margin-top: 10px;
+}
+#back-btn{
+    position: fixed;
+    top: 4vw;
+    left: 4vw;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    opacity: 80%;
+}
+#back-btn img{
+    height: 50px;
+}
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 800px) {
     .content {
-        margin: 63px 284px
+        /* margin-top: 50px;
+        margin-bottom: 50px; */
+        width: 75%;
     }
 
-    .restaurant-info {
+    /* .restaurant-info {
         font-family: "Poppins", monospace;
         flex-basis: 100%;
         display: flex;
@@ -58,5 +121,5 @@ html {
         color: #313131;
         font-size: 12px;
         font-weight: 500;
-    }
+    } */
 }
