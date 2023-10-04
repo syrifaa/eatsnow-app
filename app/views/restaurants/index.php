@@ -2,6 +2,8 @@
 // include_once 'C:\Users\KennyB\Desktop\WBD\tugas-besar-1\app\views\navbar\navbar.php';
 include_once 'sortButton.php';
 include_once 'restaurantCard.php';
+require_once '../../models/restaurant.php';
+require_once '../../models/schedule.php';
 $title  = "EatsNow";
 $page = "Restaurant";
 ?>
@@ -40,14 +42,28 @@ $page = "Restaurant";
                 <div class="filter"> <?php echoSortButton() ?> </div>
             </div>
         </div>
-
+    
         <!-- LIST OF RESTAURANTS -->
         <div class="restaurant-list">
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
+            <?php
+                $listRestaurants = new Restaurant;
+                $listSchedule = new Schedule;
+
+                $rowRestaurant = $listRestaurants->getAllRestaurants();
+                
+                while ($dataRestaurant = mysqli_fetch_array($rowRestaurant)) {
+                    $rowSchedule = $listSchedule->getSchedule($dataRestaurant['resto_id']);
+                    generateCard(
+                        $dataRestaurant['resto_name'], 
+                        $dataRestaurant['category'], 
+                        $dataRestaurant['address'], 
+                        $dataRestaurant['resto_desc'], 
+                        $dataRestaurant['rating'],
+                        $rowSchedule
+                    );
+                }
+            ?>
+
         </div>
     </section>
 <script src="../../../public/js/navbar.js"></script>
