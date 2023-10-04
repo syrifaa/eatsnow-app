@@ -1,6 +1,7 @@
 <?php
+<<<<<<< app/views/restaurants/restaurantCard.php
 
-function generateCard($name, $category, $address, $review, $rating, $rowSchedule) {
+function generateCard($name, $category, $address, $review, $rating, $rowSchedule, $linkPath) {
     $monday = "Monday";
     $tuesday = "Tuesday";
     $wednesday = "Wednesday";
@@ -30,7 +31,7 @@ function generateCard($name, $category, $address, $review, $rating, $rowSchedule
     }
 
     $card = <<<EOT
-    <div href="#" class="restaurant">
+    <a href=$linkPath class="restaurant">
         <img src="/public/assets/img/rest1.svg" alt="restoran" class="restaurant-img">
         <div class="restaurant-info">
             <div class="restaurant-name">$name</div>
@@ -77,16 +78,12 @@ function generateCard($name, $category, $address, $review, $rating, $rowSchedule
                     </div>
                 </div>
             </div>
-            <div >
-                <img src="/public/assets/vectors/review.svg" alt="review">
-                <span>$review</span>
-            </div>
             <div>
                 <img src="/public/assets/vectors/star.svg" alt="rating">
                 <span>$rating</span>
             </div>
         </div>
-    </div>
+    </a>
     EOT;
     echo $card;
 }

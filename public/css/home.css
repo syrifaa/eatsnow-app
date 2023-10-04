@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/font/Poppins-Regular.ttf');
+    src: url('../assets/font/Poppins-Bold.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
 *{
     margin: 0;
     padding: 0;
@@ -16,9 +21,11 @@ body{
     background-color: #F5F5F5;
     flex-direction: column;
 }
-.wrapper{
-    display: flex;
+.wrapper {
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
 }
 .wrapper i{
     top: 50%;
@@ -35,38 +42,32 @@ body{
     transform: translateY(-50%);
     transition: transform 0.1s linear;
 }
-.wrapper i:active{
-    transform: translateY(-50%) scale(0.9);
-}
-.wrapper i:hover{
-    background: #F5F5F5;
-}
-.wrapper i:first-child{
-    left: 10px;
-    display: none;
-}
-.wrapper i:last-child{
-    right: 10px;
-}
-.wrapper .slider{
+.slider {
     font-size: 0px;
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
 }
-.slider.dragging{
-    cursor: grab;
-    scroll-behavior: auto;
-}
-.slider.dragging img{
-    pointer-events: none;
-}
-.slider img{
+.slider img {
     height: max-content;
     object-fit: cover;
     user-select: none;
     width: 100%;
+}
+#left, #right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+#left {
+    left: 10px;
+} 
+#right {
+    right: 10px;
 }
 .desc{
     background-color: #F5F5F5;
@@ -95,9 +96,15 @@ body{
     color: #ffffff;
     text-align: center;
     padding: 3vw;
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 span{
     color: #FFF177;
     font-weight: 700;
+}
+
+@media (max-width: 800px){
+    .footer .credit{
+        font-size: 2vw;
+    }
 }

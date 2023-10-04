@@ -25,11 +25,11 @@ $page = "Update";
     <section class="content">
         <div id ="menu-btn" class="fas fa-bars"></div>
         <div class="restaurant-list">
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
+            <?php generateCard("../update/editPage.php") ?>
+            <?php generateCard("../update/editPage.php") ?>
+            <?php generateCard("../update/editPage.php") ?>
+            <?php generateCard("../update/editPage.php") ?>
+            <?php generateCard("../update/editPage.php") ?>
         </div>
     </section>
     <a href="../add/index.php" id="add-btn">

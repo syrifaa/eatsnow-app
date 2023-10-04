@@ -22,8 +22,8 @@ $page = "Home";
         </a>
         <nav class="navbar">
             <?php include "../navbar/index.php"; ?>
-            <a href="login.php" class="login">Login</a>
-            <a href="signup.php" class="signup">SignUp</a>
+            <a href="../login/index.php" class="login">Login</a>
+            <a href="../signup/index.php" class="signup">SignUp</a>
         </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>
