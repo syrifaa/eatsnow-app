@@ -1,5 +1,5 @@
 <?php
-// include_once 'editMenu.php';
+include_once 'editMenu.php';
 $title = "EatsNow";
 $page = "Add";
 ?>
@@ -131,6 +131,11 @@ $page = "Add";
                 </div>
                 <!-- LIST OF MENU -->
                 <div class="menu-list">
+                    <?php generateCard() ?>
+                    <?php generateCard() ?>
+                    <?php generateCard() ?>
+                    <?php generateCard() ?>
+                    <?php generateCard() ?>
                 </div>
             </div>
         </div>
