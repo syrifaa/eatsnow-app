@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require_once '../app/core/db.php';
-require_once '../app/user.php';
+require_once '../app/models/user.php';
 
 $user = new User;
 $content = file_get_contents('php://input');

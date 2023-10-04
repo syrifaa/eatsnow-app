@@ -4,6 +4,7 @@ include_once 'sortButton.php';
 include_once 'restaurantCard.php';
 require_once '../../models/restaurant.php';
 require_once '../../models/schedule.php';
+session_start();
 $title  = "EatsNow";
 $page = "Restaurant";
 ?>
@@ -29,9 +30,14 @@ $page = "Restaurant";
         </a>
         <nav class="navbar">
             <?php include "../navbar/index.php"; ?>
-            <a href="../login/index.php" class="login">Login</a>
-            <a href="../signup/index.php" class="signup">SignUp</a>
-        </nav>
+            <?php
+            if(!isset($_SESSION['login'])){
+                echo "<a href='../login/index.php' class='login'>Login</a>";
+                echo "<a href='../signup/index.php' class='signup'>SignUp</a>";
+            }else{
+                echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
+            }
+            ?>        </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>
     <section class="menu-scroll">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title  = "EatsNow";
 $page = "Profile";
 ?>
@@ -21,8 +22,14 @@ $page = "Profile";
         </a>
         <nav class="navbar">
             <?php include "../navbar/index.php"; ?>
-            <a href="../login/index.php" class="login">Login</a>
-            <a href="../signup/index.php" class="signup">SignUp</a>
+            <?php
+            if(!isset($_SESSION['login'])){
+                echo "<a href='../login/index.php' class='login'>Login</a>";
+                echo "<a href='../signup/index.php' class='signup'>SignUp</a>";
+            }else{
+                echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
+            }
+            ?>        
         </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>

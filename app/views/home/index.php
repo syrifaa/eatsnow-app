@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title  = "EatsNow";
 $page = "Home";
 ?>
@@ -22,8 +23,14 @@ $page = "Home";
         </a>
         <nav class="navbar">
             <?php include "../navbar/index.php"; ?>
-            <a href="../login/index.php" class="login">Login</a>
-            <a href="../signup/index.php" class="signup">SignUp</a>
+            <?php
+            if(!isset($_SESSION['login'])){
+                echo "<a href='../login/index.php' class='login'>Login</a>";
+                echo "<a href='../signup/index.php' class='signup'>SignUp</a>";
+            }else{
+                echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
+            }
+            ?>
         </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>
@@ -41,7 +48,16 @@ $page = "Home";
         <div class="desc2"> Explore a diverse array of local dining establishments and their mouthwatering offerings, all at your fingertips. From the sizzling street food stalls to cozy family-owned eateries, our app is your gateway to an unforgettable culinary adventure in Jatinangor. </div>
     </section>
     <section class="footer">
-        <div class="credit"> created by <a href="..\update\index.php"><span>H Team </span></a> | all rights reserved! </div>
+        <div class="credit"> created by 
+            <?php 
+            if ($_SESSION['role']==1) {
+                echo "<a href='..\update\index.php'><span>H Team </span></a>";
+            }
+            else {
+                echo "<span>H Team </span>";
+            }
+            ?>
+            | all rights reserved! </div>
     </section>
 <script src="../../../public/js/navbar.js"></script>
 <script src="../../../public/js/slider.js"></script>

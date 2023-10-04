@@ -1,6 +1,6 @@
 <?php 
 class User{
-    private $table = 'User';
+    private $table = 'user';
     private $database;
 
     public function __construct(){
@@ -8,7 +8,7 @@ class User{
     }
 
     public function createUser($name, $email, $password){
-        $query = "INSERT INTO $this->table (name, email, password) VALUES ('$name', '$email', '$password')";
+        $query = "INSERT INTO $this->table (user_name, email, password) VALUES ('$name', '$email', '$password')";
         $this->database->execute($query);
     }
 
