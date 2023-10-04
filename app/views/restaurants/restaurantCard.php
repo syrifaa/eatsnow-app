@@ -1,6 +1,4 @@
 <?php
-<<<<<<< app/views/restaurants/restaurantCard.php
-
 function generateCard($name, $category, $address, $review, $rating, $rowSchedule, $linkPath) {
     $monday = "Monday";
     $tuesday = "Tuesday";

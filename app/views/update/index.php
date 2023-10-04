@@ -1,5 +1,7 @@
 <?php
 include_once '../restaurants/restaurantCard.php';
+require_once '../../models/restaurant.php';
+require_once '../../models/schedule.php';
 $title = "EatsNow";
 $page = "Update";
 ?>
@@ -25,11 +27,25 @@ $page = "Update";
     <section class="content">
         <div id ="menu-btn" class="fas fa-bars"></div>
         <div class="restaurant-list">
-            <?php generateCard("../update/editPage.php") ?>
-            <?php generateCard("../update/editPage.php") ?>
-            <?php generateCard("../update/editPage.php") ?>
-            <?php generateCard("../update/editPage.php") ?>
-            <?php generateCard("../update/editPage.php") ?>
+            <?php
+                $listRestaurants = new Restaurant;
+                $listSchedule = new Schedule;
+
+                $rowRestaurant = $listRestaurants->getAllRestaurants();
+                
+                while ($dataRestaurant = mysqli_fetch_array($rowRestaurant)) {
+                    $rowSchedule = $listSchedule->getSchedule($dataRestaurant['resto_id']);
+                    generateCard(
+                        $dataRestaurant['resto_name'], 
+                        $dataRestaurant['category'], 
+                        $dataRestaurant['address'], 
+                        $dataRestaurant['resto_desc'], 
+                        $dataRestaurant['rating'],
+                        $rowSchedule,
+                        "../restaurantPage/index.php"
+                    );
+                }
+            ?>
         </div>
     </section>
     <a href="../add/index.php" id="add-btn">
