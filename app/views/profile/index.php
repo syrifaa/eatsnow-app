@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!session_id()) {
+    session_start();
+}
 $title  = "EatsNow";
 $page = "Profile";
 ?>
@@ -17,15 +19,15 @@ $page = "Profile";
 </head>
 <body>
     <section class="header">
-        <a href="#" class="logo">
+        <a href="/Home" class="logo">
             <img src="../../../public/assets/img/logo1.png"/>
         </a>
         <nav class="navbar">
-            <?php include "../navbar/index.php"; ?>
+            <?php include "app/views/navbar/index.php"; ?>
             <?php
             if(!isset($_SESSION['login'])){
-                echo "<a href='../login/index.php' class='login'>Login</a>";
-                echo "<a href='../signup/index.php' class='signup'>SignUp</a>";
+                echo "<a href='/Login' class='login'>Login</a>";
+                echo "<a href='/Register' class='signup'>SignUp</a>";
             }else{
                 echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
             }

@@ -23,11 +23,11 @@
             <input type="submit" name="" value="Sign Up" href="">
             </table><br>
             <u>
-                Already Have Account? click <a href="../login/index.php" class="here">here</a> for login
+                Already Have Account? click <a href="/Login" class="here">here</a> for login
         </u>
         </form>
     </div>
-    <a href="../home/index.php" id="back-btn">
+    <a href="/Home" id="back-btn">
         <img src="../../../public/assets/img/back.png" alt="img">
     </a>
 </body>

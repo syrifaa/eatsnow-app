@@ -18,10 +18,10 @@ if(isset($decoded['name']) && isset($decoded['email']) && isset($decoded['passwo
     if($cekArray==null){
         $user->createUser($name, $email, $password);
         echo "<script type='text/javascript'> alert('Register Successful'); </script>";
-        echo "<script>location.href='../app/views/login/index.php'</script>";
+        echo "<script>location.href='/Login'</script>";
     }else{
         echo "<script type='text/javascript'> alert('Email already registered, Please use another email address'); </script>";
-        echo "<script>location.href='../app/views/signup/index.php'</script>";
+        echo "<script>location.href='.Register'</script>";
     }
 }
 ?>

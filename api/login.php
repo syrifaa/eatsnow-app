@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 require_once '../app/core/db.php';
 require_once '../app/models/user.php';
 
@@ -23,18 +23,18 @@ if(isset($decoded['email']) && isset($decoded['password'])){
         echo "<script type='text/javascript'> alert('Login Successful'); </script>";
 
         if($dataUser['isAdmin'] == 0){
-            echo "<script>location.href='../app/views/home/index.php'</script>";
+            echo "<script>location.href='/Home'</script>";
         }
         else{
             echo "<script>location.href='../app/views/update/index.php'</script>";
         }
     }else{
         echo "<script type='text/javascript'> alert('Email or Password is wrong'); </script>";
-        echo "<script>location.href='../app/views/login/index.php'</script>";
+        echo "<script>location.href='/Login'</script>";
     }
 }
 else{
     echo "<script type='text/javascript'> alert('Email or Password is wrong'); </script>";
-    echo "<script>location.href='../app/views/login/index.php'</script>";
+    echo "<script>location.href='/Login'</script>";
 }
 ?>

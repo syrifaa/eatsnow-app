@@ -1,10 +1,9 @@
 <?php
-// include_once 'C:\Users\KennyB\Desktop\WBD\tugas-besar-1\app\views\navbar\navbar.php';
+
 include_once 'sortButton.php';
 include_once 'restaurantCard.php';
-require_once '../../models/restaurant.php';
-require_once '../../models/schedule.php';
-session_start();
+require_once 'app/models/restaurant.php';
+require_once 'app/models/schedule.php';
 $title  = "EatsNow";
 $page = "Restaurant";
 ?>
@@ -25,15 +24,15 @@ $page = "Restaurant";
 </head>
 <body>
     <section class="header">
-        <a href="#" class="logo">
+        <a href="/Home" class="logo">
             <img src="../../../public/assets/img/logo1.png"/>
         </a>
         <nav class="navbar">
-            <?php include "../navbar/index.php"; ?>
+            <?php include "app/views/navbar/index.php"; ?>
             <?php
             if(!isset($_SESSION['login'])){
-                echo "<a href='../login/index.php' class='login'>Login</a>";
-                echo "<a href='../signup/index.php' class='signup'>SignUp</a>";
+                echo "<a href='/Login' class='login'>Login</a>";
+                echo "<a href='/Register' class='signup'>SignUp</a>";
             }else{
                 echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
             }
