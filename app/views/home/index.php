@@ -50,10 +50,14 @@ $page = "Home";
     <section class="footer">
         <div class="credit"> created by 
             <?php 
-            if ($_SESSION['role']==1) {
-                echo "<a href='..\update\index.php'><span>H Team </span></a>";
-            }
-            else {
+            if(isset($_SESSION['login'])) {
+                if ($_SESSION['role']==1) {
+                    echo "<a href='..\update\index.php'><span>H Team </span></a>";
+                }
+                else {
+                    echo "<span>H Team </span>";
+                }
+            } else {
                 echo "<span>H Team </span>";
             }
             ?>

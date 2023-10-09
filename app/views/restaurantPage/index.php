@@ -34,8 +34,8 @@ $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img
 </head>
 <body>
     <section class="content">
-        <section class="restaurant-img">
-            <img src=<?php echo $photo?> alt="restoran" class="restaurant-img">
+        <section class="restaurant-video">
+            <video src="/public/assets/vid/nyam nyam kenyang.mp4" controls>
         </section>
 
         <section class="restaurant-info">

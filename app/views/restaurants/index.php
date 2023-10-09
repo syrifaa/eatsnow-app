@@ -38,7 +38,8 @@ $page = "Restaurant";
             }else{
                 echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
             }
-            ?>        </nav>
+            ?>        
+        </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>
     <section class="menu-scroll">
