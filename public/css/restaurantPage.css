@@ -21,6 +21,9 @@ body {
     background-color: #F5F5F5;
     flex-direction: column;
 } 
+b {
+    display: none;
+}
 .content {
     margin-top: 50px;
     margin-bottom: 50px;
