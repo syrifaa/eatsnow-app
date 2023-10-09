@@ -36,13 +36,18 @@ class Food {
         return $this->db->execute($query);
     }
 
+    public function getIDFood() {
+        $query = "SELECT food_id FROM $this->table WHERE resto_id is NULL";
+        return $this->db->execute($query);
+    }
+
     public function getFoodById($id) {
         $query = "SELECT * FROM $this->table WHERE food_id = $id";
         return $this->db->execute($query);
     }
 
-    public function insertFoodToResto($resto_id, $food_id) {
-        $query = "UPDATE $this->table SET resto_id = $resto_id WHERE food_id is NULL";
-        return $query;
+    public function insertFoodToResto($resto_id) {
+        $query = "UPDATE $this->table SET resto_id = $resto_id WHERE resto_id is NULL";
+        return $this->db->execute($query);
     }
 }

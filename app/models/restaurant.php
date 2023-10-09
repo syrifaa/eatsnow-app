@@ -70,6 +70,11 @@ class Restaurant {
 
     public function insertRestaurant($resto_name, $resto_desc, $address, $rating, $img_path, $vid_path, $category) {
         $query = "INSERT INTO $this->table (resto_name, resto_desc, address, rating, img_path, vid_path, category) VALUES ('$resto_name', '$resto_desc', '$address', $rating, '$img_path', '$vid_path', '$category')";
+        $this->db->execute($query);
+    }
+
+    public function getLastID() {
+        $query = "SELECT MAX(resto_id) AS resto_id FROM $this->table";
         return $this->db->execute($query);
     }
 }

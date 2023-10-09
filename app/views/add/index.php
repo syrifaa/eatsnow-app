@@ -112,7 +112,7 @@ $page = "Add";
                     <div>Korean</div>
                     <div>Western</div>
                 </div>
-                <input type="hidden" id="category" name="category">
+                <input type="hidden" id="category" name="category" value="Indonesian">
             </div>
             <label class="title" for="review">Review</label>
             <textarea class="textbox" id="review" name="review"></textarea>
