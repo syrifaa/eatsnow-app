@@ -74,10 +74,10 @@ function generateCard($id, $name, $desc, $price, $path) {
     </div>
     EOT;
     echo $card;
-    echo $id;
-    echo $name;
-    echo $desc;
-    echo $price;
-    echo $path;
+    // echo $id;
+    // echo $name;
+    // echo $desc;
+    // echo $price;
+    // echo $path;
 }
 ?>

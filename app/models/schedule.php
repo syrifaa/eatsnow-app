@@ -28,7 +28,7 @@ class Schedule {
 
     public function insertSchedule($data){
         $query = "INSERT INTO $this->table (resto_id, day, open_time, close_time) VALUES ($data[resto_id], '$data[day]', '$data[open_time]', '$data[close_time]')";
-        return $query;
+        return $this->db->execute($query);
     }
 
     public function insertScheduleToResto($resto_id, $schedule_id) {

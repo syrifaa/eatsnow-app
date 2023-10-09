@@ -17,92 +17,92 @@ $page = "Add";
     <a href="../update/index.php" id="close-btn">
         <img src="../../../public/assets/img/cross.png" alt="img">
     </a>
-    <div class="container">
+    <form class="container" action="/api/addRestaurant.php" method="POST" enctype="multipart/form-data">
         <div class="image">
             <div class="container-img">
                 <div class="image-container">
                     <div id="imgUpload"></div>
                 </div>
-                <input class="imgUpload" type="file" 
+                <input class="imgUpload" type="file" name="restaurant-img"
                     required="" accept=".jpg,.jpeg,.png" capture>
             </div>
             <div class="container-img">
                 <div class="image-container">
                     <div id="videoUpload"></div>
                 </div>
-                <input class="videoUpload" type="file" 
+                <input class="videoUpload" type="file" name="restaurant-vid"
                     required="" accept=".gif,.mp4" capture>
             </div>
         </div>
         <div class="form">
             <label class="title" for="restaurant-name">Restaurant Name</label>
-            <input type="text" class="input-form" name="restaurant-name" required>
+            <input type="text" class="input-form" id="restaurant-name" name="restaurant-name" required>
             <label class="title" for="location">Location</label>
-            <input type="text" class="input-form" name="location" required>
-            <label class="title" for="Hours">Hours</label>
+            <input type="text" class="input-form" id="location" name="location" required>
+            <label class="title">Hours</label>
             <div class="hours">
                 <div class="form-group">
-                    <label class="form-control" for="monday">Monday</label>
-                    <input type="time" class="form-control" id="monday-open">
-                    <input type="time" class="form-control" id="monday-close">
+                    <label class="form-control">Monday</label>
+                    <input type="time" class="form-control" id="monday-open" name="monday-open">
+                    <input type="time" class="form-control" id="monday-close" name="monday-close">
                     <div class="form-control">
                         <img class="remove-img" id="remove" src="../../../public/assets/img/remove.png"/>
                     </div>                
                 </div>
                 <div class="form-group">
-                    <label class="form-control" for="tuesday">Tuesday</label>
-                    <input type="time" class="form-control" id="tuesday-open">
-                    <input type="time" class="form-control" id="tuesday-close">
+                    <label class="form-control">Tuesday</label>
+                    <input type="time" class="form-control" id="tuesday-open" name="tuesday-open">
+                    <input type="time" class="form-control" id="tuesday-close" name="tuesday-close">
                     <div class="form-control">
                         <img class="remove-img" id="remove" src="../../../public/assets/img/remove.png"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control" for="wednesday">Wednesday</label>
-                    <input type="time" class="form-control" id="wednesday-open">
-                    <input type="time" class="form-control" id="wednesday-close">
+                    <label class="form-control">Wednesday</label>
+                    <input type="time" class="form-control" id="wednesday-open" name="wednesday-open">
+                    <input type="time" class="form-control" id="wednesday-close" name="wednesday-close">
                     <div class="form-control">
                         <img class="remove-img" id="remove" src="../../../public/assets/img/remove.png"/>
                     </div>                
                 </div>
                 <div class="form-group">
-                    <label class="form-control" for="thursday">Thursday</label>
-                    <input type="time" class="form-control" id="thursday-open">
-                    <input type="time" class="form-control" id="thursday-close">
+                    <label class="form-control">Thursday</label>
+                    <input type="time" class="form-control" id="thursday-open" name="thursday-open">
+                    <input type="time" class="form-control" id="thursday-close" name="thursday-close">
                     <div class="form-control">
                         <img class="remove-img" id="remove" src="../../../public/assets/img/remove.png"/>
                     </div>                
                 </div>
                 <div class="form-group">
-                    <label class="form-control" for="friday">Friday</label>
-                    <input type="time" class="form-control" id="friday-open">
-                    <input type="time" class="form-control" id="friday-close">
+                    <label class="form-control">Friday</label>
+                    <input type="time" class="form-control" id="friday-open" name="friday-open">
+                    <input type="time" class="form-control" id="friday-close" name="friday-close">
                     <div class="form-control">
                         <img class="remove-img" id="remove" src="../../../public/assets/img/remove.png"/>
                     </div>                
                 </div>
                 <div class="form-group">
-                    <label class="form-control" for="saturday">Saturday</label>
-                    <input type="time" class="form-control" id="saturday-open">
-                    <input type="time" class="form-control" id="saturday-close">
+                    <label class="form-control">Saturday</label>
+                    <input type="time" class="form-control" id="saturday-open" name="saturday-open">
+                    <input type="time" class="form-control" id="saturday-close" name="saturday-close">
                     <div class="form-control">
                         <img class="remove-img" id="remove" src="../../../public/assets/img/remove.png"/>
                     </div>                
                 </div>
                 <div class="form-group">
-                    <label class="form-control" for="sunday">Sunday</label>
-                    <input type="time" class="form-control" id="sunday-open">
-                    <input type="time" class="form-control" id="sunday-close">
+                    <label class="form-control">Sunday</label>
+                    <input type="time" class="form-control" id="sunday-open" name="sunday-open">
+                    <input type="time" class="form-control" id="sunday-close" name="sunday-close">
                     <div class="form-control">
                         <img class="remove-img" id="remove" src="../../../public/assets/img/remove.png"/>
                     </div>                
                 </div>
             </div>
             <label class="title" for="rating">Rating</label>
-            <input type="number" class="input-form" name="rating" min="0" max="5" step=".1" required>
-            <label class="title" for="category">Category</label>
+            <input type="number" class="input-form" id="rating" name="rating" min="0" max="5" step=".1" required>
+            <label class="title">Category</label>
             <div class="custom-select">
-                <div class="select-selected">Indonesian</div>
+                <div class="select-selected" id="selectedCategory">Indonesian</div>
                 <div class="select-items">
                     <div>Indonesian</div>
                     <div>Chinese</div>
@@ -110,54 +110,36 @@ $page = "Add";
                     <div>Korean</div>
                     <div>Western</div>
                 </div>
+                <input type="hidden" id="category" name="category" value="Indonesian">
             </div>
             <label class="title" for="review">Review</label>
-            <textarea class="textbox" name="review"></textarea>
-            <label class="title" for="menu">Menu</label>
+            <textarea class="textbox" id="review" name="review"></textarea>
+            <label class="title">Menu</label>
             <div class="menu-scroll">
                 <div class="add-menu">
                     <a class="add-btn" id="add-btn">Add Menu</a>
                 </div>
                 <div id="modal" class="modal">
-                    <div class="modal-content">
-                        <div class="container-img">
-                            <div class="image-container">
-                                <div id="menuUpload"></div>
-                            </div>
-                            <input class="menuUpload" type="file" 
-                                required="" accept=".jpg,.jpeg,.png" capture>
-                        </div>
-                        <label class="title" for="menu-name">Name</label>
-                        <input type="text" class="input-form" name="menu-name" required>
-                        <label class="title" for="price">Price</label>
-                        <input type="text" class="input-form" name="price" required>
-                        <label class="title" for="desc">Description</label>
-                        <textarea class="textbox" name="desc"></textarea>
-                        <div class="modal-btn">
-                            <a id="save">Save</a> 
-                            <a id="cancel">Cancel</a>
-                        </div>                
-                    </div>
+                    <!-- GENERATE MODAL -->
                 </div>
                 <!-- LIST OF MENU -->
                 <div class="menu-list">
-                    <!-- <?php generateCard() ?>
-                    <?php generateCard() ?>
-                    <?php generateCard() ?>
-                    <?php generateCard() ?>
-                    <?php generateCard() ?> -->
+                    <?php
+                        // generateCard();
+                    ?>
                 </div>
             </div>
         </div>
         <div class="update">
-            <a class="update-btn" id="update-btn">Update</a>
+            <input class="update-btn" id="update-btn" type="submit" name="update" value="Update" href="">
+            <input class="update-btn" id="delete-btn" type="button" name="delete" value="Delete" href="">
         </div>
-    </div>
+    </form>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         setupImageUpload('#imgUpload', '.imgUpload');
         setupImageUpload('#videoUpload', '.videoUpload');
-        setupImageUpload('#menuUpload', '.menuUpload');
+        // setupImageUpload('#menuUpload', '.menuUpload');
     });
 </script>
 <script src="../../../public/js/preview.js"></script>
