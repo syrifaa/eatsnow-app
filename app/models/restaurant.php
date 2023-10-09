@@ -1,5 +1,5 @@
 <?php
-require_once '../../core/db.php';
+require_once (__DIR__.'../../core/db.php');
 
 class Restaurant {
     private $table = 'restaurant';
@@ -12,7 +12,8 @@ class Restaurant {
     public function getAllRestaurants()
     {
         $query = "SELECT * FROM $this->table";
-        return $this->db->execute($query);
+        // return $this->db->execute($query);
+        return $query;
     }
 
     public function getRestaurant($id)
@@ -30,20 +31,23 @@ class Restaurant {
 
     public function sortRestaurantByName($order)
     {
-        $query = "SELECT * FROM $this->table ORDER BY resto_name $order";
-        return $this->db->execute($query);
+        $query = " ORDER BY resto_name $order";
+        // return $this->db->execute($query);
+        return $query;
     }
 
     public function sortRestaurantByRating($order)
     {
-        $query = "SELECT * FROM $this->table ORDER BY resto_rating $order";
-        return $this->db->execute($query);
+        $query = " ORDER BY rating $order";
+        // return $this->db->execute($query);
+        return $query;
     }
 
     public function filterRestaurantByRating($rating)
     {
-        $query = "SELECT * FROM $this->table WHERE resto_rating >= $rating";
-        return $this->db->execute($query);
+        $query = " WHERE rating >= $rating";
+        // return $this->db->execute($query);
+        return $query;
     }
 
     public function filterRestaurantByPrice($price)
@@ -51,4 +55,22 @@ class Restaurant {
         $query = "SELECT * FROM $this->table WHERE resto_price <= $price";
         return $this->db->execute($query);
     }
+
+    public function filterRestaurantByCategory($category)
+    {
+        $query = " WHERE category = '$category'";
+        // return $this->db->execute($query);
+        return $query;
+    }
+
+    public function execute($query)
+    {
+        return $this->db->execute($query);
+    }
+
+    public function insertRestaurant($resto_name, $resto_desc, $address, $rating, $img_path, $vid_path, $category) {
+        $query = "INSERT INTO $this->table (resto_name, resto_desc, address, rating, img_path, vid_path, category) VALUES ('$resto_name', '$resto_desc', '$address', $rating, '$img_path', '$vid_path', '$category')";
+        return $this->db->execute($query);
+    }
 }
+

@@ -7,6 +7,7 @@
         <title>Sign Up  - EatsNow</title>
         <link rel="stylesheet" href="../../../public/css/signupLogin.css">
         <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
+        <script src="../../../public/js/signupLogin.js"></script>
 
 </head>
 <body>
@@ -15,12 +16,15 @@
         <form action="/api/signup.php" method="POST">
             <table>
             <label>Username</label>
-            <input type="text" name="name"> <br>
+            <input type="text" id="name" name="name" onchange="cekUsername()" required>
+            <p id="nameError"></p>
             <label>Email</label>
-            <input type="email" name="email"> <br>
+            <input type="email" id="email" name="email" onchange="cekEmail()" required>
+            <p id="emailError"></p>
             <label>Password</label>
-            <input type="password" name="password"> <br>
-            <input type="submit" name="" value="Sign Up" href="">
+            <input type="password" id="password" name="password" onchange="cekPassword()" required>
+            <p id="passwordError"></p>
+            <input type="submit" id="submit" name="" value="Sign Up" href="">
             </table><br>
             <u>
                 Already Have Account? click <a href="../login/index.php" class="here">here</a> for login

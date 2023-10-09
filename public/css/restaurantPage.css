@@ -21,6 +21,9 @@ body {
     background-color: #F5F5F5;
     flex-direction: column;
 } 
+b {
+    display: none;
+}
 .content {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -47,9 +50,15 @@ body {
     margin-bottom: 7px;
     align-content: center;
 }
-.restaurant-info img {
-    width: 16px;
+.restaurant-video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.restaurant-video video {
+    width: 70%;
     margin-right: 7px;
+    object-fit: cover;
 }
 .restaurant-info .restaurant-name {
     font-weight: 800;
