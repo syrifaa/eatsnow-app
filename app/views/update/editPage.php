@@ -1,5 +1,4 @@
 <?php
-include_once 'editMenu.php';
 $title = "EatsNow";
 $page = "Add";
 ?>
@@ -21,14 +20,18 @@ $page = "Add";
     <div class="container">
         <div class="image">
             <div class="container-img">
-                <img class="img1" src="../../../public/assets/img/profile-img.png"/>
-                <input class="restaurant-img" id="img1" type="file" 
-                    name="img1" placeholder="Photo" required="" capture>
+                <div class="image-container">
+                    <div id="imgUpload"></div>
+                </div>
+                <input class="imgUpload" type="file" 
+                    required="" accept=".jpg,.jpeg,.png" capture>
             </div>
             <div class="container-img">
-                <img class="img3" src="../../../public/assets/img/profile-img.png"/>
-                <input class="restaurant-img" id="img3" type="file" 
-                    name="img3" placeholder="Photo" required="" capture>
+                <div class="image-container">
+                    <div id="videoUpload"></div>
+                </div>
+                <input class="videoUpload" type="file" 
+                    required="" accept=".gif,.mp4" capture>
             </div>
         </div>
         <div class="form">
@@ -117,6 +120,13 @@ $page = "Add";
                 </div>
                 <div id="modal" class="modal">
                     <div class="modal-content">
+                        <div class="container-img">
+                            <div class="image-container">
+                                <div id="menuUpload"></div>
+                            </div>
+                            <input class="menuUpload" type="file" 
+                                required="" accept=".jpg,.jpeg,.png" capture>
+                        </div>
                         <label class="title" for="menu-name">Name</label>
                         <input type="text" class="input-form" name="menu-name" required>
                         <label class="title" for="price">Price</label>
@@ -131,11 +141,11 @@ $page = "Add";
                 </div>
                 <!-- LIST OF MENU -->
                 <div class="menu-list">
+                    <!-- <?php generateCard() ?>
                     <?php generateCard() ?>
                     <?php generateCard() ?>
                     <?php generateCard() ?>
-                    <?php generateCard() ?>
-                    <?php generateCard() ?>
+                    <?php generateCard() ?> -->
                 </div>
             </div>
         </div>
@@ -145,11 +155,12 @@ $page = "Add";
     </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        setupImageUpload('.img1', '#img1');
-        setupImageUpload('.img3', '#img3');
+        setupImageUpload('#imgUpload', '.imgUpload');
+        setupImageUpload('#videoUpload', '.videoUpload');
+        setupImageUpload('#menuUpload', '.menuUpload');
     });
 </script>
-<script src="../../../public/js/preview-img.js"></script>
+<script src="../../../public/js/preview.js"></script>
 <script src="../../../public/js/reset.js"></script>
 <script src="../../../public/js/dropdown.js"></script>
 <script src="../../../public/js/modal.js"></script>
