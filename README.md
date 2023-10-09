@@ -34,31 +34,31 @@ Daftar fitur:
 ## Screenshots
 1. Halaman Utama 
     ---
-    <img src="public\assets\img\screenshots\Homepage.png" style="width: 500px" />
+    <img src="public/assets/img/screenshots/Homepage.png" style="width: 500px" />
 2. Halaman Sign Up 
     ---
-    <img src="public\assets\img\screenshots\SignUp.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/SignUp.png" style="width: 500px"/>
 3. Halaman Login 
     ---
-    <img src="public\assets\img\screenshots\Login.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/Login.png" style="width: 500px"/>
 4. Halaman Homepage Admin 
     ---
-    <img src="public\assets\img\screenshots\Homepage-admin.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/Homepage-admin.png" style="width: 500px"/>
 5. Halaman Profile 
     ---
-    <img src="public\assets\img\screenshots\Profile.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/Profile.png" style="width: 500px"/>
 6. Halaman Restaurants 
     ---
-    <img src="public\assets\img\screenshots\ListRestaurant.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/ListRestaurant.png" style="width: 500px"/>
 7. Halaman Restaurant Information 
     ---
-    <img src="public\assets\img\screenshots\RestaurantInfo.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/RestaurantInfo.png" style="width: 500px"/>
 8. Halaman Add New Restaurant 
     ---
-    <img src="public\assets\img\screenshots\AddRestaurant.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/AddRestaurant.png" style="width: 500px"/>
 9. Halaman Update Restaurant 
     ---
-    <img src="public\assets\img\screenshots\UpdateRestaurant.png" style="width: 500px"/>
+    <img src="public/assets/img/screenshots/UpdateRestaurant.png" style="width: 500px"/>
 
 ## Authors
 1. Server-side
