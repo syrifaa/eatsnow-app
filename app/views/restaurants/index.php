@@ -1,6 +1,7 @@
 <?php
 // include_once 'C:\Users\KennyB\Desktop\WBD\tugas-besar-1\app\views\navbar\navbar.php';
 include_once 'sortButton.php';
+include_once 'filterButton.php';
 include_once 'restaurantCard.php';
 require_once '../../models/restaurant.php';
 require_once '../../models/schedule.php';
@@ -16,7 +17,7 @@ $page = "Restaurant";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
-    <link rel="stylesheet" type="text/css" href="../../../public/css/sortButton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../public/css/sortFilter.css" />
     <link rel="stylesheet" type="text/css" href="../../../public/css/restaurantCard.css" />
     <link rel="stylesheet"  type="text/css" href="../../../public/css/restaurants.css" />
     <link rel="stylesheet" href="../../../public/css/navbar.css"/>
@@ -42,35 +43,20 @@ $page = "Restaurant";
     </section>
     <section class="menu-scroll">
         <div class="search-sort-filter">
-            <input type="text" placeholder="Search" class="search">
+            <input type="text" id="searchInput" placeholder="Search" class="search">
             <div class="sort-filter">
                 <div class="sort"> <?php echoSortButton() ?> </div>
-                <div class="filter"> <?php echoSortButton() ?> </div>
+                <div class="filter"> <?php echoFilterButton() ?> </div>
             </div>
         </div>
     
         <!-- LIST OF RESTAURANTS -->
-        <div class="restaurant-list">
-            <?php
-                $listRestaurants = new Restaurant;
-                $listSchedule = new Schedule;
-
-                $rowRestaurant = $listRestaurants->getAllRestaurants();
-                
-                while ($dataRestaurant = mysqli_fetch_array($rowRestaurant)) {
-                    $rowSchedule = $listSchedule->getSchedule($dataRestaurant['resto_id']);
-                    generateCard(
-                        $dataRestaurant['resto_name'], 
-                        $dataRestaurant['category'], 
-                        $dataRestaurant['address'], 
-                        $dataRestaurant['resto_desc'], 
-                        $dataRestaurant['rating'],
-                        $rowSchedule,
-                        "../restaurantPage/index.php"
-                    );
-                }
-            ?>
+        <div class="restaurant-list" id="list-restaurant">
         </div>
+        <div id="pagination">
+            <!-- paging button -->
+        </div>
+        <script src="../../../public/js/search.js"></script>
     </section>
 <script src="../../../public/js/navbar.js"></script>
 </body>
