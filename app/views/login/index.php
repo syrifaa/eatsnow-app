@@ -14,6 +14,7 @@ if (isset($_SESSION['login'])) {
         <title>Login - EatsNow</title>
         <link rel="stylesheet" href="../../../public/css/signupLogin.css">
         <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
+        <script src="../../../public/js/signupLogin.js"></script>
 
 </head>
 <body>
@@ -22,10 +23,12 @@ if (isset($_SESSION['login'])) {
         <form action="/api/login.php" method="POST">
             <table>
             <label>Email</label>
-            <input type="email" name="email"> <br>
+            <input type="email" id="email" name="email" onchange="cekEmail()" required>
+            <p id="emailError"></p>
             <label>Password</label>
-            <input type="password" name="password"> <br>
-            <input type="submit" name="" value="Login">
+            <input type="password" id="password" name="password" onchange="cekPassword()" required>
+            <p id="passwordError"></p>
+            <input type="submit" id="submit-login" name="" value="Login">
             </table><br>
             <u>
                 Don't Have Account? click <a href="../signup/index.php" class="here">here</a> for sign up
