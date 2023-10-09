@@ -1,24 +1,17 @@
 <?php
+
+if (!session_id()) { session_start(); }
+
 require_once 'app/models/Restaurant.php';
 require_once 'app/models/Food.php';
 include_once 'menuCard.php';
-require_once '../../models/restaurant.php';
-require_once '../../models/schedule.php';
+require_once 'app/models/schedule.php';
 $title = "EatsNow";
 $page = "RestaurantPage";
-$restoID = $_GET['restoID'];
 
-$restaurant = new Restaurant;
 $schedule = new Schedule;
 
-$resto = $restaurant->getRestaurant($restoID);
-$restoData = array();
-$row = mysqli_fetch_assoc($resto);
-$nama = $row['resto_name'];
-$categoty = $row['category'];
-$address = $row['address'];
-$desc = $row['resto_desc'];
-$photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img_path'];
+// $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img_path'];
 
 
 ?>
@@ -40,9 +33,9 @@ $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img
         $listRestaurants = new Restaurant;
         $rowRestaurant = $listRestaurants->getRestaurant($idRestaurant);
         $restaurantData = mysqli_fetch_assoc($rowRestaurant);
-        // var_dump($restaurantData);
+
         $listFood = new Food;
-        $rowFood = $listFood->getFood($idRestaurant);
+        $rowFood = $listFood->getAllFood($idRestaurant);
     ?>
     <section class="content">
         <section class="restaurant-video">
@@ -50,7 +43,11 @@ $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img
         </section>
 
         <section class="restaurant-info">
-            <div class="restaurant-name"><?php echo $restaurantData['resto_name']; ?></div>
+            <div class="restaurant-name">
+                <?php echo $restaurantData['resto_name']?>
+                <b class="div" id="resto_id"><?php echo $restaurantData['resto_id']?></b>
+            </div>
+
             <div class="restaurant-category"><?php echo $restaurantData['category']; ?></div>
             <div>
                 <img src="/public/assets/vectors/pinpoint.svg" alt="pinpoint">

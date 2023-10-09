@@ -12,8 +12,8 @@ class Restaurant {
     public function getAllRestaurants()
     {
         $query = "SELECT * FROM $this->table";
-        // return $this->db->execute($query);
-        return $query;
+        return $this->db->execute($query);
+        // return $query;
     }
 
     public function getRestaurant($id)

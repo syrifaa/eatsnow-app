@@ -1,5 +1,6 @@
 <?php
-// session_start();
+if (!session_id()) { session_start(); }
+
 if (isset($_SESSION['login'])) {
     echo "<script>location.href='/Home'</script>";
 }

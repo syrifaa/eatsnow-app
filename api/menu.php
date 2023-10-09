@@ -29,7 +29,7 @@ function fetchDataByPage($con, $page, $itemsPerPage, $restoID){
     $cards = array();
     $counter = 0;
     while($row = mysqli_fetch_assoc($result)){
-        $cards[] = generateCard(
+        $cards[] = generateFoodCard(
             $row['img_path'],
             $row['food_name'],
             $row['food_desc'],

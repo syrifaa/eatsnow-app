@@ -4,7 +4,7 @@ const validasiEmail = (email) => {
 };
 
 const validasiUsername = (username) => {
-    const regex = /^[a-zA-Z0-9.-]{8,255}$/;
+    const regex = /^[a-zA-Z0-9.-]{1,255}$/;
     return String(username).match(regex);
 };
 
@@ -33,18 +33,14 @@ const cekUsername = () => {
     if (username.length == 0){
         document.getElementById("name").style.border = "none";
         document.getElementById("nameError").innerHTML = "";
-        // return false;
-
     }
     else if (!validasiUsername(username)) {
         document.getElementById("name").style.border = "1px solid red";
         document.getElementById("nameError").innerHTML = "Username only use letters, periods, and dashes";
-        // return false;
     }
     else{
         document.getElementById("name").style.border = "none";
         document.getElementById("nameError").innerHTML = "";
-        // return true;
     }
     cekAll();
 }

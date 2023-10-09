@@ -1,9 +1,9 @@
 <?php
-include_once '../restaurants/restaurantCard.php';
-include_once '../restaurants/sortButton.php';
-include_once '../restaurants/filterButton.php';
-require_once '../../models/restaurant.php';
-require_once '../../models/schedule.php';
+include_once 'app/views/restaurants/restaurantCard.php';
+include_once 'app/views/restaurants/sortButton.php';
+include_once 'app/views/restaurants/filterButton.php';
+require_once 'app/models/restaurant.php';
+require_once 'app/models/schedule.php';
 // require_once '../restaurants/restaurantCard.php';
 $title = "EatsNow";
 $page = "Update";
@@ -24,10 +24,10 @@ $page = "Update";
 </head>
 <body>
     <section class="sidebar">
-        <a href="../home/index.php" class="logo">
+        <a href="/Home" class="logo">
             <img src="../../../public/assets/img/logo1.png"/>
         </a>
-        <?php include "../sidebar/index.php"; ?>
+        <?php include "app/views/sidebar/index.php"; ?>
     </section>
     <section class="content">
         <div id ="menu-btn" class="fas fa-bars"></div>
@@ -45,7 +45,7 @@ $page = "Update";
         </div>
         <script src="../../../public/js/searchUpdate.js"></script>
     </section>
-    <a href="../add/index.php" id="add-btn">
+    <a href="Update/addRestaurant" id="add-btn">
         <img src="../../../public/assets/img/add.png" alt="img">
     </a>
 <script src="../../../public/js/sidebar.js"></script>

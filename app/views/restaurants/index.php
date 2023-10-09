@@ -1,5 +1,7 @@
 <?php
 
+if (!session_id()) { session_start(); }
+
 include_once 'sortButton.php';
 include_once 'filterButton.php';
 include_once 'restaurantCard.php';
@@ -51,26 +53,8 @@ $page = "Restaurant";
         </div>
     
         <!-- LIST OF RESTAURANTS -->
-        <div class="restaurant-list">
-            <?php
-                $listRestaurants = new Restaurant;
-                $listSchedule = new Schedule;
-
-                $rowRestaurant = $listRestaurants->getAllRestaurants();
-                
-                while ($dataRestaurant = mysqli_fetch_array($rowRestaurant)) {
-                    $idRestaurant = "/Restaurants/detail?id=" . $dataRestaurant['resto_id'];
-                    $rowSchedule = $listSchedule->getSchedule($dataRestaurant['resto_id']);
-                    generateCard(
-                        $dataRestaurant['resto_name'], 
-                        $dataRestaurant['category'], 
-                        $dataRestaurant['address'], 
-                        $dataRestaurant['rating'],
-                        $rowSchedule,
-                        $idRestaurant
-                    );
-                }
-            ?>
+        <div class="restaurant-list" id="list-restaurant">
+            
         </div>
         <div id="pagination">
             <!-- paging button -->

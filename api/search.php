@@ -9,13 +9,13 @@ $con = new database;
 $listSchedule = new Schedule;
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
-$itemsPerPage = 2;
+$itemsPerPage = 5;
 
 $action = $_GET['action'];
 if($action == 'user'){
-    $link = "../restaurantPage/index.php";
+    $link = "/Restaurants/detail";
 }else if($action == 'admin'){
-    $link = "editPage.php";
+    $link = "/Update/editRestaurant";
 }
 
 function calculateTotalPages($conn, $itemsPerPage) {
@@ -91,17 +91,16 @@ function fetchDataByPage($conn, $page, $itemsPerPage, $listSchedule, $link) {
     $result = $conn->execute($query);
     // echo $result;
     $cards = array();
-
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
     }
 
@@ -122,14 +121,14 @@ function fetchDataByPageSort($conn, $page, $itemsPerPage, $listSchedule, $sortOp
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
     }
     return $cards;
@@ -149,14 +148,14 @@ function fetchDataByPageFilter($conn, $page, $itemsPerPage, $listSchedule, $filt
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
     }
     return $cards;
@@ -181,14 +180,14 @@ function fetchDataBySortFilter($conn, $page, $itemsPerPage, $listSchedule, $sort
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
     }
     return $cards;
@@ -202,14 +201,14 @@ function fetchDataByPageAndSearch($conn, $page, $itemsPerPage, $searchTerm, $lis
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
     }
 
@@ -231,14 +230,14 @@ function fetchDataBySearchSort($conn, $page, $itemsPerPage, $searchTerm, $listSc
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
         // echo $row['resto_name'];
     }
@@ -260,14 +259,14 @@ function fetchDataBySearchFilter($conn, $page, $itemsPerPage, $searchTerm, $list
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
         // echo $row['resto_name'];
     }
@@ -294,14 +293,14 @@ function fetchDataBySearchSortFilter($conn, $page, $itemsPerPage, $searchTerm, $
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
+        $linkto = $link . "?id=" . $row['resto_id'];
         $cards[] = generateCard(
             $row['resto_name'],
             $row['category'],
             $row['address'],
-            $row['resto_desc'],
             $row['rating'],
             $rowSchedule,
-            $link, $row['resto_id']
+            $linkto
         );
         // echo $row['resto_name'];
     }

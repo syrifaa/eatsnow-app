@@ -1,5 +1,5 @@
 <?php
-function generateCard($imgPath, $name, $desc, $price) {
+function generateFoodCard($imgPath, $name, $desc, $price) {
     $card = <<<EOT
     <div class="menu">
         <img src=$imgPath alt="menu" class="menu-img">

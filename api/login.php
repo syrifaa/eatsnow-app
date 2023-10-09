@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+if(!session_id()) { session_start(); }
 require_once '../app/core/db.php';
 require_once '../app/models/user.php';
 
@@ -27,7 +27,7 @@ if(isset($decoded['email']) && isset($decoded['password'])){
             echo "<script>location.href='/Home'</script>";
         }
         else{
-            echo "<script>location.href='../app/views/update/index.php'</script>";
+            echo "<script>location.href='/Update'</script>";
         }
     }else{
         echo "<script type='text/javascript'> alert('Email or Password is wrong'); </script>";

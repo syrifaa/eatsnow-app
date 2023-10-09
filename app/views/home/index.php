@@ -56,7 +56,7 @@ $page = "Home";
                     echo "<span>H Team </span>";
                 }
                 else {
-                    echo "<a href='..\update\index.php'><span>H Team </span></a>";
+                    echo "<a href='/Update'><span>H Team </span></a>";
                 }
             ?>
             | all rights reserved! </div>
