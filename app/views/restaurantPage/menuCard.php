@@ -1,14 +1,14 @@
 <?php
-function generateCard() {
+function generateCard($imgPath, $name, $desc, $price) {
     $card = <<<EOT
     <div class="menu">
-        <img src="/public/assets/img/rest1.svg" alt="menu" class="menu-img">
+        <img src=$imgPath alt="menu" class="menu-img">
         <div class="menu-info">
-            <div class="menu-name">Name</div>
-            <div class="menu-desc">Desc</div>
+            <div class="menu-name">$name</div>
+            <div class="menu-desc">$desc</div>
         </div>
-        <div class="menu-price">Price</div>
+        <div class="menu-price">$price</div>
     </div>
     EOT;
-    echo $card;
+    return $card;
 }

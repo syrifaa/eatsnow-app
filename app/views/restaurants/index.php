@@ -44,17 +44,20 @@ $page = "Restaurant";
     </section>
     <section class="menu-scroll">
         <div class="search-sort-filter">
-            <input type="text" placeholder="Search" class="search">
+            <input type="text" id="searchInput" placeholder="Search" class="search">
             <div class="sort-filter">
+                <div class="sort"> <?php echoSortButton() ?> </div>
+                <div class="filter"> <?php echoFilterButton() ?> </div>
             </div>
         </div>
     
         <!-- LIST OF RESTAURANTS -->
-        <div class="restaurant-list">
+        <div class="restaurant-list" id="list-restaurant">
         </div>
         <div id="pagination">
-            <!-- Tombol-tombol paging akan ditampilkan di sini -->
+            <!-- paging button -->
         </div>
+        <script src="../../../public/js/search.js"></script>
     </section>
 <script src="../../../public/js/navbar.js"></script>
 </body>

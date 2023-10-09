@@ -1,5 +1,5 @@
 <?php
-function generateCard($name, $category, $address, $review, $rating, $rowSchedule, $linkPath) {
+function generateCard($name, $category, $address, $review, $rating, $rowSchedule, $linkPath, $idResto) {
     $monday = "Monday";
     $tuesday = "Tuesday";
     $wednesday = "Wednesday";
@@ -29,7 +29,7 @@ function generateCard($name, $category, $address, $review, $rating, $rowSchedule
     }
 
     $card = <<<EOT
-    <a href=$linkPath class="restaurant">
+    <a href=$linkPath?restoID=$idResto class="restaurant">
         <img src="/public/assets/img/rest1.svg" alt="restoran" class="restaurant-img">
         <div class="restaurant-info">
             <div class="restaurant-name">$name</div>
@@ -83,7 +83,7 @@ function generateCard($name, $category, $address, $review, $rating, $rowSchedule
         </div>
     </a>
     EOT;
-    echo $card;
+    return $card;
 }
 
 ?>

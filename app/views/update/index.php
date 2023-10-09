@@ -1,7 +1,10 @@
 <?php
 include_once '../restaurants/restaurantCard.php';
+include_once '../restaurants/sortButton.php';
+include_once '../restaurants/filterButton.php';
 require_once '../../models/restaurant.php';
 require_once '../../models/schedule.php';
+// require_once '../restaurants/restaurantCard.php';
 $title = "EatsNow";
 $page = "Update";
 ?>
@@ -13,9 +16,11 @@ $page = "Update";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
+    <link rel="stylesheet" type="text/css" href="../../../public/css/sortFilter.css" />
     <link rel="stylesheet" href="../../../public/css/update.css"/>
     <link rel="stylesheet" href="../../../public/css/restaurantCard.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="../../../public/js/sortButton.js"></script>
 </head>
 <body>
     <section class="sidebar">
@@ -26,27 +31,19 @@ $page = "Update";
     </section>
     <section class="content">
         <div id ="menu-btn" class="fas fa-bars"></div>
-        <div class="restaurant-list">
-            <?php
-                $listRestaurants = new Restaurant;
-                $listSchedule = new Schedule;
-
-                $rowRestaurant = $listRestaurants->getAllRestaurants();
-                
-                while ($dataRestaurant = mysqli_fetch_array($rowRestaurant)) {
-                    $rowSchedule = $listSchedule->getSchedule($dataRestaurant['resto_id']);
-                    generateCard(
-                        $dataRestaurant['resto_name'], 
-                        $dataRestaurant['category'], 
-                        $dataRestaurant['address'], 
-                        $dataRestaurant['resto_desc'], 
-                        $dataRestaurant['rating'],
-                        $rowSchedule,
-                        "../restaurantPage/index.php"
-                    );
-                }
-            ?>
+        <div class="search-sort-filter">
+            <input type="text" id="searchInput" placeholder="Search" class="search">
+            <div class="sort-filter">
+                <div class="sort"> <?php echoSortButton() ?> </div>
+                <div class="filter"> <?php echoFilterButton() ?> </div>
+            </div>
         </div>
+        <div class="restaurant-list" id="list-restaurant">
+        </div>
+        <div id="pagination">
+            <!-- paging button -->
+        </div>
+        <script src="../../../public/js/searchUpdate.js"></script>
     </section>
     <a href="../add/index.php" id="add-btn">
         <img src="../../../public/assets/img/add.png" alt="img">
