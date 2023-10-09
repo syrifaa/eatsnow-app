@@ -1,4 +1,6 @@
 <?php
+require_once 'app/models/Restaurant.php';
+require_once 'app/models/Food.php';
 include_once 'menuCard.php';
 require_once '../../models/restaurant.php';
 require_once '../../models/schedule.php';
@@ -33,17 +35,26 @@ $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img
     <!-- <script src='main.js'></script> -->
 </head>
 <body>
+    <?php 
+        $idRestaurant = $_GET['id'];
+        $listRestaurants = new Restaurant;
+        $rowRestaurant = $listRestaurants->getRestaurant($idRestaurant);
+        $restaurantData = mysqli_fetch_assoc($rowRestaurant);
+        // var_dump($restaurantData);
+        $listFood = new Food;
+        $rowFood = $listFood->getFood($idRestaurant);
+    ?>
     <section class="content">
         <section class="restaurant-video">
             <video src="/public/assets/vid/nyam nyam kenyang.mp4" controls>
         </section>
 
         <section class="restaurant-info">
-            <div class="restaurant-name"><?php echo $nama?><b class="div" id="resto_id"><?echo $restoID?></b></div>
-            <div class="restaurant-category"><?php echo $categoty?></div>
+            <div class="restaurant-name"><?php echo $restaurantData['resto_name']; ?></div>
+            <div class="restaurant-category"><?php echo $restaurantData['category']; ?></div>
             <div>
                 <img src="/public/assets/vectors/pinpoint.svg" alt="pinpoint">
-                <span><?php echo $address?></span>
+                <span><?php echo $restaurantData['address']; ?></span>
             </div>
             <div>
                 <img src="/public/assets/vectors/clock.svg" alt="clock">
@@ -55,12 +66,12 @@ $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img
             </div>
             <div>
                 <img src="/public/assets/vectors/star.svg" alt="rating">
-                <span>Restaurant Rating</span>
+                <span><?php echo $restaurantData['rating'] ?></span>
             </div>
         </section>
 
         <section class="restaurant-desc">
-            <?php echo $desc?>
+            <?php echo $restaurantData['resto_desc'] ?>
         </section>
 
         <div class="menu-label">Menu</div>
@@ -72,7 +83,7 @@ $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img
         </div>
         <script src="../../../public/js/menu.js"></script>
     </section>
-    <a href="../restaurants/index.php" id="back-btn">
+    <a href="/Restaurants" id="back-btn">
         <img src="../../../public/assets/img/back.png" alt="img">
     </a>
 </body>

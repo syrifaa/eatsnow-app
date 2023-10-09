@@ -1,7 +1,7 @@
 <?php
-session_start();
+// session_start();
 if (isset($_SESSION['login'])) {
-    echo "<script>location.href='../home/index.php'</script>";
+    echo "<script>location.href='/Home'</script>";
 }
 ?>
 
@@ -31,11 +31,12 @@ if (isset($_SESSION['login'])) {
             <input type="submit" id="submit-login" name="" value="Login">
             </table><br>
             <u>
-                Don't Have Account? click <a href="../signup/index.php" class="here">here</a> for sign up
+                Don't Have Account? click <a href="/Register" class="here">here</a> for sign up
             </u>
         </form>
     </div>
-    <a href="../home/index.php" id="back-btn">
+
+    <a href="/Home" id="back-btn">
         <img src="../../../public/assets/img/back.png" alt="img">
     </a>
 </body>

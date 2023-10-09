@@ -1,5 +1,5 @@
 <?php
-require_once (__DIR__.'../../core/db.php');
+require_once 'app/core/db.php';
 
 class Restaurant {
     private $table = 'restaurant';

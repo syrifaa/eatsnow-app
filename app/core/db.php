@@ -1,10 +1,10 @@
 <?php
-    class database{
+    class Database{
       private $conn;
       private $statement;
       
         public function __construct(){
-            $this->conn = mysqli_connect ("db", "user", "password", "eatsnow");
+            $this->conn = mysqli_connect("db", "user", "password", "eatsnow");
             if ($this->conn->connect_error) {
                 die("Connection failed: " . $this->conn->connect_error);
             }

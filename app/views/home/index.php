@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 $title  = "EatsNow";
 $page = "Home";
 ?>
@@ -22,11 +24,11 @@ $page = "Home";
             <img src="../../../public/assets/img/logo1.png"/>
         </a>
         <nav class="navbar">
-            <?php include "../navbar/index.php"; ?>
+            <?php include "app/views/navbar/index.php"; ?>
             <?php
             if(!isset($_SESSION['login'])){
-                echo "<a href='../login/index.php' class='login'>Login</a>";
-                echo "<a href='../signup/index.php' class='signup'>SignUp</a>";
+                echo "<a href='/Login' class='login'>Login</a>";
+                echo "<a href='/Register' class='signup'>SignUp</a>";
             }else{
                 echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
             }
@@ -50,16 +52,12 @@ $page = "Home";
     <section class="footer">
         <div class="credit"> created by 
             <?php 
-            if(isset($_SESSION['login'])) {
-                if ($_SESSION['role']==1) {
-                    echo "<a href='..\update\index.php'><span>H Team </span></a>";
-                }
-                else {
+                if (!isset($_SESSION['role']) || $_SESSION['role']==0) {
                     echo "<span>H Team </span>";
                 }
-            } else {
-                echo "<span>H Team </span>";
-            }
+                else {
+                    echo "<a href='..\update\index.php'><span>H Team </span></a>";
+                }
             ?>
             | all rights reserved! </div>
     </section>

@@ -1,31 +1,16 @@
 <?php
-function generateCard($name, $category, $address, $review, $rating, $rowSchedule, $linkPath, $idResto) {
-    $monday = "Monday";
-    $tuesday = "Tuesday";
-    $wednesday = "Wednesday";
-    $thursday = "Thursday";
-    $friday = "Friday";
-    $saturday = "Saturday";
-    $sunday = "Sunday";
+function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPath) {
+    $days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-    $result = [
-        "Monday" => "",
-        "Tuesday" => "",
-        "Wednesday" => "",
-        "Thursday" => "",
-        "Friday" => "",
-        "Saturday" => "",
-        "Sunday" => ""
-    ];
+    $result = array_fill_keys($days, "Closed");
 
     while ($schedule = mysqli_fetch_array($rowSchedule)) {
         $result[$schedule['day']] = "{$schedule['open_time']} - {$schedule['close_time']}";
     }
 
-    foreach ($result as $key => $value) {
-        if ($value == "") {
-            $result[$key] = "Closed";
-        }
+    $scheduleRows = "";
+    foreach ($days as $day) {
+        $scheduleRows .= "<tr><td>$day</td><td>{$result[$day]}</td></tr>";
     }
 
     $card = <<<EOT
@@ -44,34 +29,7 @@ function generateCard($name, $category, $address, $review, $rating, $rowSchedule
                     <span class="schedule-today">Restaurant Schedule</span>
                     <div class="schedule-detail">
                         <table>
-                            <tr>
-                                <td>Monday</td>
-                                <td>$result[$monday]</td>
-                            </tr>
-                            <tr>
-                                <td>Tuesday</td>
-                                <td>$result[$tuesday]</td>
-                            </tr>
-                            <tr>
-                                <td>Wednesday</td>
-                                <td>$result[$wednesday]</td>
-                            </tr>
-                            <tr>
-                                <td>Thursday</td>
-                                <td>$result[$thursday]</td>
-                            </tr>
-                            <tr>
-                                <td>Friday</td>
-                                <td>$result[$friday]</td>
-                            </tr>
-                            <tr>
-                                <td>Saturday</td>
-                                <td>$result[$saturday]</td>
-                            </tr>
-                            <tr>
-                                <td>Sunday</td>
-                                <td>$result[$sunday]</td>
-                            </tr>
+                            $scheduleRows
                         </table>
                     </div>
                 </div>
