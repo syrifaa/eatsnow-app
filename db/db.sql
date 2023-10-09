@@ -84,3 +84,50 @@ INSERT INTO schedule VALUES (2, 'Tuesday', '10:00:00', '20:00:00');
 INSERT INTO schedule VALUES (2, 'Wednesday', '09:00:00', '19:00:00');
 INSERT INTO schedule VALUES (2, 'Thursday', '11:00:00', '18:00:00');
 INSERT INTO schedule VALUES (2, 'Friday', '08:00:00', '12:00:00');
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Geprek', 'Ayam geprek dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Bakar', 'Ayam bakar dengan sambal pedas', 15000, NULL, 1);
+
+Insert INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Goreng', 'Ayam goreng dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Kecap', 'Ayam kecap dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Rica-rica', 'Ayam rica-rica dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Sambal Ijo', 'Ayam sambal ijo dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Sambal Merah', 'Ayam sambal merah dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Sambal Terasi', 'Ayam sambal terasi dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Sambal Matah', 'Ayam sambal matah dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Ayam Sambal Bawang', 'Ayam sambal bawang dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Nasi Goreng', 'Nasi goreng dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Nasi Goreng Seafood', 'Nasi goreng seafood dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Nasi Goreng Ayam', 'Nasi goreng ayam dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Nasi Goreng Sapi', 'Nasi goreng sapi dengan sambal pedas', 15000, NULL, 1);
+
+INSERT INTO food (food_name, food_desc, price, img_path, resto_id) VALUES 
+    ('Nasi Goreng Kambing', 'Nasi goreng kambing dengan sambal pedas', 15000, NULL, 1);
+
+insert into user values ('admin@admin.admin', 'admin', 'agsaKeni0', 1, 'profile-img.png');

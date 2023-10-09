@@ -14,7 +14,7 @@ $page = "Add";
     <link rel="stylesheet" href="../../../public/css/editMenu.css"/>
 </head>
 <body>
-    <a href="../update/index.php" id="close-btn">
+    <a href="/Update" id="close-btn">
         <img src="../../../public/assets/img/cross.png" alt="img">
     </a>
     <form class="container" action="/api/addRestaurant.php" method="POST" enctype="multipart/form-data">

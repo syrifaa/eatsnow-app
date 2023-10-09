@@ -1,5 +1,5 @@
 <?php
-require_once 'app/core/db.php';
+require_once (__DIR__.'../../core/db.php');
 
 class Restaurant {
     private $table = 'restaurant';
@@ -70,6 +70,7 @@ class Restaurant {
 
     public function insertRestaurant($resto_name, $resto_desc, $address, $rating, $img_path, $vid_path, $category) {
         $query = "INSERT INTO $this->table (resto_name, resto_desc, address, rating, img_path, vid_path, category) VALUES ('$resto_name', '$resto_desc', '$address', $rating, '$img_path', '$vid_path', '$category')";
+        // return $query;
         $this->db->execute($query);
     }
 

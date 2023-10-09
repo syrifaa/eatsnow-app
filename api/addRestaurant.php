@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // echo $resto_vid;
 
     $resto->insertRestaurant($restoName, $review, $location, $rating, $resto_img, $resto_vid, $category);
-    $id = $resto->getLastID();
+        $id = $resto->getLastID();
     $lastID = mysqli_fetch_assoc($id)['resto_id'];
     echo $lastID;
     $scheduleData = array(
@@ -86,13 +86,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         array('resto_id' => $lastID, 'day' => 'Wednesday', 'open_time' => $wednesdayOpen, 'close_time' => $wednesdayClose),
         array('resto_id' => $lastID, 'day' => 'Thursday', 'open_time' => $thursdayOpen, 'close_time' => $thursdayClose),
         array('resto_id' => $lastID, 'day' => 'Friday', 'open_time' => $fridayOpen, 'close_time' => $fridayClose),
+        array('resto_id' => $lastID, 'day' => 'Saturday', 'open_time' => $saturdayOpen, 'close_time' => $saturdayClose),
+        array('resto_id' => $lastID, 'day' => 'Sunday', 'open_time' => $sundayOpen, 'close_time' => $sundayClose)
         );
     foreach ($scheduleData as $data) {
         $schedule->insertSchedule($data);
     }
     $food->insertFoodToResto($lastID);
     echo "<script type='text/javascript'> alert('Restaurant Added Successfully'); </script>";
-    echo "<script>location.href='../app/views/update/index.php'</script>";
+    echo "<script>location.href='/Update'</script>";
 }
 
 ?>

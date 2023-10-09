@@ -1,5 +1,6 @@
 <?php
-function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPath) {
+
+function generateSchedule($rowSchedule) {
     $days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
     $result = array_fill_keys($days, "Closed");
@@ -12,6 +13,11 @@ function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPa
     foreach ($days as $day) {
         $scheduleRows .= "<tr><td>$day</td><td>{$result[$day]}</td></tr>";
     }
+
+    return $scheduleRows;
+}
+function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPath) {
+    $scheduleRows = generateSchedule($rowSchedule);
 
     $card = <<<EOT
     <a href=$linkPath class="restaurant">
