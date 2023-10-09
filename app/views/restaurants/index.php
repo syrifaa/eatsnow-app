@@ -57,15 +57,15 @@ $page = "Restaurant";
                 $rowRestaurant = $listRestaurants->getAllRestaurants();
                 
                 while ($dataRestaurant = mysqli_fetch_array($rowRestaurant)) {
+                    $idRestaurant = "/Restaurants/detail?id=" . $dataRestaurant['resto_id'];
                     $rowSchedule = $listSchedule->getSchedule($dataRestaurant['resto_id']);
                     generateCard(
                         $dataRestaurant['resto_name'], 
                         $dataRestaurant['category'], 
                         $dataRestaurant['address'], 
-                        $dataRestaurant['resto_desc'], 
                         $dataRestaurant['rating'],
                         $rowSchedule,
-                        "../restaurantPage/index.php"
+                        $idRestaurant
                     );
                 }
             ?>

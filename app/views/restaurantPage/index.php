@@ -1,4 +1,6 @@
 <?php
+require_once 'app/models/Restaurant.php';
+require_once 'app/models/Food.php';
 include_once 'menuCard.php';
 $title = "EatsNow";
 $page = "RestaurantPage";
@@ -16,17 +18,26 @@ $page = "RestaurantPage";
     <script src='main.js'></script>
 </head>
 <body>
+    <?php 
+        $idRestaurant = $_GET['id'];
+        $listRestaurants = new Restaurant;
+        $rowRestaurant = $listRestaurants->getRestaurant($idRestaurant);
+        $restaurantData = mysqli_fetch_assoc($rowRestaurant);
+        // var_dump($restaurantData);
+        $listFood = new Food;
+        $rowFood = $listFood->getFood($idRestaurant);
+    ?>
     <section class="content">
         <section class="restaurant-img">
             <img src="/public/assets/img/rest1.svg" alt="restoran" class="restaurant-img">
         </section>
 
         <section class="restaurant-info">
-            <div class="restaurant-name">Restaurant Name</div>
-            <div class="restaurant-category">Restaurant Category</div>
+            <div class="restaurant-name"><?php echo $restaurantData['resto_name']; ?></div>
+            <div class="restaurant-category"><?php echo $restaurantData['category']; ?></div>
             <div>
                 <img src="/public/assets/vectors/pinpoint.svg" alt="pinpoint">
-                <span>Jalan Raya, Cileunyi Wetan, Cileunyi, Bandung Regency, West Java 40622</span>
+                <span><?php echo $restaurantData['address']; ?></span>
             </div>
             <div>
                 <img src="/public/assets/vectors/clock.svg" alt="clock">
@@ -38,12 +49,12 @@ $page = "RestaurantPage";
             </div>
             <div>
                 <img src="/public/assets/vectors/star.svg" alt="rating">
-                <span>Restaurant Rating</span>
+                <span><?php echo $restaurantData['rating'] ?></span>
             </div>
         </section>
 
         <section class="restaurant-desc">
-            jadi ini konsepnya open kitchen gt yhh, pertama kali yg dicobain potongan bebeknya,,, pas masuk mulut reflek ngomong ANJIR MAKANAN SURGA 😫😫😫 nasi hainannya ENAK BGT super wangi dari pas nunggu makanannya SUMPAH WANGI BGT jadi bikin makin laper, kuahnya juga enak gurih ga hambar, es tehnya seger bgt terus ga terlalu manis, omuricenya porsi nya mayan banyaaaak, di atas nya ada telor yg agak setengah mateng wicis kesukaan ak hehe…. bebek nya juga enak dhhhh bingung diapain tp dapet nya yg ada yg banyak tulang nya hiks kureng sedekah kh tp ga semua sieh ((dr kita bertiga)), kwotienya mayan kecil tp sebanding sm harganya yg AFFORDABLE BGT 10k doang??? enak bgt lg mau nangis sumpah
+            <?php echo $restaurantData['resto_desc'] ?>
         </section>
 
         <div class="menu-label">Menu</div>
@@ -55,7 +66,7 @@ $page = "RestaurantPage";
             <?php generateCard() ?>
         </div>
     </section>
-    <a href="../restaurants/index.php" id="back-btn">
+    <a href="/Restaurants" id="back-btn">
         <img src="../../../public/assets/img/back.png" alt="img">
     </a>
 </body>

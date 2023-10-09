@@ -7,7 +7,7 @@ class App {
 
     public function __construct() {
         $url = $this->parse_url();
-
+        
         if (file_exists('app/controllers/' . $url[0] . 'Control.php')) {
             $this->controller = $url[0];
             unset($url[0]);
@@ -40,9 +40,19 @@ class App {
             $url = rtrim($_SERVER['REQUEST_URI'], '/');
             $url = ltrim($url, '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = ltrim($url, '?');
-            $url = explode('/', $url);
-            return $url;
+
+            $parts = explode('?', $url, 2);
+            $query = isset($parts[1]) ? $parts[1] : null;
+
+            if ($query) {
+                $queryParts = explode('&', $query);
+                foreach ($queryParts as $queryPart) {
+                    $queryItem = explode('=', $queryPart);
+                    $_GET[$queryItem[0]] = $queryItem[1];
+                }
+            }
+            
+            return explode('/', $parts[0]);
         }
     }
 }

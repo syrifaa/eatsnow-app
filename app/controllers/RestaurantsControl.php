@@ -5,4 +5,7 @@ class Restaurants extends Controller {
         $this->view('restaurants/index');
     }
     
+    public function detail() {
+        $this->view('restaurantPage/index');
+    }
 }
