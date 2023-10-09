@@ -1,4 +1,4 @@
-.menu {
+/* .menu {
     background-color: #ffffff;
     border-radius: 5px;
     display: flex;
@@ -32,8 +32,9 @@
     flex-direction: column;
     align-items: center;
 }
-.input-form{
-    font-size: 2vh;
+.remove-menu{
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 #name, #desc{
     width: 30vw;
@@ -49,8 +50,41 @@
     #file-input-label {
         font-size: 1.75vw;
     }
-    .input-form{
-        padding-left: 10px;
-        font-size: 1.25vh;
+    .remove-menu{
+        margin-bottom: 1vw;
     }
+} */
+.menu-info {
+    padding: 20px;
+    font-family: "Poppins", monospace;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.menu-name, .menu-desc {
+    font-weight: 600;
+    width: 25vw;
+}
+
+.menu-price {
+    width: 10vw;
+}
+
+.menu {
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+.menu-img {
+    border-radius: 5px 5px 0 5px;
+    width: 12vw;
+    height: 12vw;
+    object-fit: cover;
 }

@@ -16,5 +16,10 @@ class User{
         $query = "SELECT * FROM $this->table WHERE email = '$email'";
         return $this->database->execute($query);
     }
+
+    public function updateUser($previousemail, $name, $email, $password, $profile_img) {
+        $query = "UPDATE $this->table SET user_name = '$name', email = '$email', password = '$password', profile_img = '$profile_img'  WHERE email = '$previousemail'";
+        $this->database->execute($query);
+    }
 }
 ?>

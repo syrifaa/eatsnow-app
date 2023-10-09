@@ -2,8 +2,25 @@
 require_once 'app/models/Restaurant.php';
 require_once 'app/models/Food.php';
 include_once 'menuCard.php';
+require_once '../../models/restaurant.php';
+require_once '../../models/schedule.php';
 $title = "EatsNow";
 $page = "RestaurantPage";
+$restoID = $_GET['restoID'];
+
+$restaurant = new Restaurant;
+$schedule = new Schedule;
+
+$resto = $restaurant->getRestaurant($restoID);
+$restoData = array();
+$row = mysqli_fetch_assoc($resto);
+$nama = $row['resto_name'];
+$categoty = $row['category'];
+$address = $row['address'];
+$desc = $row['resto_desc'];
+$photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img_path'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +32,7 @@ $page = "RestaurantPage";
     <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
     <link rel="stylesheet" href="/public/css/restaurantPage.css"/>    
     <link rel="stylesheet" href="/public/css/menuCard.css"/>    
-    <script src='main.js'></script>
+    <!-- <script src='main.js'></script> -->
 </head>
 <body>
     <?php 
@@ -28,8 +45,8 @@ $page = "RestaurantPage";
         $rowFood = $listFood->getFood($idRestaurant);
     ?>
     <section class="content">
-        <section class="restaurant-img">
-            <img src="/public/assets/img/rest1.svg" alt="restoran" class="restaurant-img">
+        <section class="restaurant-video">
+            <video src="/public/assets/vid/nyam nyam kenyang.mp4" controls>
         </section>
 
         <section class="restaurant-info">
@@ -58,13 +75,13 @@ $page = "RestaurantPage";
         </section>
 
         <div class="menu-label">Menu</div>
-        <div class="menu-list">
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
-            <?php generateCard() ?>
+        <!-- LIST OF MENU -->
+        <div class="menu-list" id="menu-list">
         </div>
+        <div id="pagination">
+            <!-- PAGING BUTTON -->
+        </div>
+        <script src="../../../public/js/menu.js"></script>
     </section>
     <a href="/Restaurants" id="back-btn">
         <img src="../../../public/assets/img/back.png" alt="img">

@@ -35,7 +35,8 @@ CREATE TABLE user (
     email VARCHAR(255) PRIMARY KEY,
     user_name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    isAdmin BOOLEAN DEFAULT 0
+    isAdmin BOOLEAN DEFAULT 0,
+    profile_img VARCHAR(255) DEFAULT 'profile-img.png'
 );
 
 -- Insert sample data to the Restaurant table
@@ -83,4 +84,3 @@ INSERT INTO schedule VALUES (2, 'Tuesday', '10:00:00', '20:00:00');
 INSERT INTO schedule VALUES (2, 'Wednesday', '09:00:00', '19:00:00');
 INSERT INTO schedule VALUES (2, 'Thursday', '11:00:00', '18:00:00');
 INSERT INTO schedule VALUES (2, 'Friday', '08:00:00', '12:00:00');
-    

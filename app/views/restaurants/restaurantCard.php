@@ -14,7 +14,7 @@ function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPa
     }
 
     $card = <<<EOT
-    <a href=$linkPath class="restaurant">
+    <a href=$linkPath?restoID=$idResto class="restaurant">
         <img src="/public/assets/img/rest1.svg" alt="restoran" class="restaurant-img">
         <div class="restaurant-info">
             <div class="restaurant-name">$name</div>
@@ -41,7 +41,7 @@ function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPa
         </div>
     </a>
     EOT;
-    echo $card;
+    return $card;
 }
 
 ?>

@@ -20,6 +20,7 @@ if(isset($decoded['email']) && isset($decoded['password'])){
         $_SESSION['name'] = $dataUser['user_name'];
         $_SESSION['password'] = $dataUser['password'];
         $_SESSION['role'] = $dataUser['isAdmin'];
+        $_SESSION['profile_photo'] = $dataUser['profile_img'];
         echo "<script type='text/javascript'> alert('Login Successful'); </script>";
 
         if($dataUser['isAdmin'] == 0){

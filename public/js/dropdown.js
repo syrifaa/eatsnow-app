@@ -1,23 +1,19 @@
-const customSelect = document.querySelector('.custom-select');
+const selectSelected = document.getElementById('selectedCategory');
 const selectItems = document.querySelector('.select-items');
-const selectSelected = document.querySelector('.select-selected');
+const categoryInput = document.getElementById('category');
 
+// Event listener for clicking the selected category
 selectSelected.addEventListener('click', function() {
-  selectItems.style.display = selectItems.style.display === 'block' ? 'none' : 'block';
+    selectItems.style.display = selectItems.style.display === 'block' ? 'none' : 'block';
 });
 
-document.addEventListener('click', function(e) {
-  if (e.target !== selectSelected) {
-    selectItems.style.display = 'none';
-  }
-});
-
+// Event listener for clicking on an item
 const selectItemsDivs = document.querySelectorAll('.select-items div');
-selectItemsDivs.forEach(function(item, index) {
-  item.addEventListener('click', function() {
-    selectSelected.innerHTML = this.innerHTML;
-    selectItems.style.display = 'none';
-    const select = document.querySelector('select');
-    select.value = index;
-  });
+selectItemsDivs.forEach(function(item) {
+    item.addEventListener('click', function() {
+        selectSelected.innerHTML = this.innerHTML;
+        selectItems.style.display = 'none';
+        categoryInput.value = this.innerHTML; // Update the input field value
+        console.log(categoryInput.value);
+    });
 });

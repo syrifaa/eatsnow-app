@@ -1,6 +1,7 @@
 <?php
 
 include_once 'sortButton.php';
+include_once 'filterButton.php';
 include_once 'restaurantCard.php';
 require_once 'app/models/restaurant.php';
 require_once 'app/models/schedule.php';
@@ -15,7 +16,7 @@ $page = "Restaurant";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
-    <link rel="stylesheet" type="text/css" href="../../../public/css/sortButton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../public/css/sortFilter.css" />
     <link rel="stylesheet" type="text/css" href="../../../public/css/restaurantCard.css" />
     <link rel="stylesheet"  type="text/css" href="../../../public/css/restaurants.css" />
     <link rel="stylesheet" href="../../../public/css/navbar.css"/>
@@ -36,15 +37,16 @@ $page = "Restaurant";
             }else{
                 echo "<a href='../../../api/logout.php' class='login'>Logout</a>";
             }
-            ?>        </nav>
+            ?>        
+        </nav>
         <div id ="menu-btn" class="fas fa-bars"></div>
     </section>
     <section class="menu-scroll">
         <div class="search-sort-filter">
-            <input type="text" placeholder="Search" class="search">
+            <input type="text" id="searchInput" placeholder="Search" class="search">
             <div class="sort-filter">
                 <div class="sort"> <?php echoSortButton() ?> </div>
-                <div class="filter"> <?php echoSortButton() ?> </div>
+                <div class="filter"> <?php echoFilterButton() ?> </div>
             </div>
         </div>
     
@@ -70,6 +72,10 @@ $page = "Restaurant";
                 }
             ?>
         </div>
+        <div id="pagination">
+            <!-- paging button -->
+        </div>
+        <script src="../../../public/js/search.js"></script>
     </section>
 <script src="../../../public/js/navbar.js"></script>
 </body>

@@ -37,32 +37,35 @@ $page = "Profile";
     </section>
     <section class="container">
         <div class="profile">
+            <form class="form" action="/api/updateProfile.php" method="POST" enctype="multipart/form-data">
             <div class="image">
                 <div class="profile-container">
-                    <img id="profileImage" src="../../../public/assets/img/profile-img.png"/>
+                    <div id="profileImage">
+                        <img src="../../../public/assets/img/<?php echo $_SESSION['profile_photo']; ?>" alt="Profile Photo" id="profile-preview">
+                    </div>
                 </div>
-                <input class="imageUpload" type="file" 
-                    name="profile_photo" placeholder="Photo" required="" capture>
-            </div>
-            <div class="form">
+                <input class="imageUpload" type="file" id="profile-img"
+                    name="profile_photo" accept=".jpg,.jpeg,.png" capture>
+                </div>
                 <label for="name">Name</label><br>
-                <input type="text" class="input-form" name="name" required><br>
+                <input type="text" class="input-form" name="name" value="<?php echo $_SESSION['name']?>" required><br>
                 <label for="email">Email</label><br>
-                <input type="email" class="input-form" name="email" required><br>
+                <input type="email" class="input-form" name="email" value=<?php echo $_SESSION['email']?> required><br>
                 <label for="pw">Change Password</label><br>
-                <input type="password" class="input-form" name="pw" required><br>
-            </div>
-        </div>
-        <div class="update-btn">
-            <a href="#" class="update">Update</a>
+                <input type="password" class="input-form" name="password" value="<?php echo $_SESSION['password']?>" required><br>
+                <div class="update-btn">
+                    <!-- <a href="#" type="submit" class="update">Update</a> -->
+                    <input class="update" type="submit" name="update" value="Update" href="">
+                </div>
+            </form>
         </div>
     </section>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        setupImageUpload('#profileImage', '.imageUpload');
-    });
+document.addEventListener("DOMContentLoaded", function() {
+    setupImageUpload('#profileImage', '.imageUpload');
+});
 </script>
 <script src="../../../public/js/navbar.js"></script>
-<script src="../../../public/js/preview-img.js"></script>
+<script src="../../../public/js/preview.js"></script>
 </body>
 </html>

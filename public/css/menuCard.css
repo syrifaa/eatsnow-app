@@ -12,6 +12,7 @@
     border-radius: 5px 5px 0 5px;
     width: 17.5vw;
     height: 17.5vw;
+    margin-left: 10px;
     object-fit: cover;
 }
 

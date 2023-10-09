@@ -67,6 +67,7 @@ input[type="email"]{
   height: 30px;
   /* width: 30vw; */
   border: none;
+  /* border-color: #D9D9D9; */
   padding: 10px 15px;
   border-radius: 20px;
 }
@@ -97,6 +98,22 @@ input[type="submit"]{
   transform: translate(-50%, 0%);
   cursor: pointer;
 }
+
+p{
+
+  font-size: small;
+  font-weight: lighter;
+  color: red;
+  margin-top: 0px;
+  display: table;
+p{
+  font-size: small;
+  font-weight: lighter;
+  color: red;
+  margin-top: 0px;
+}
+}
+
 /* b{
   cursor: pointer;
 } */
