@@ -100,7 +100,8 @@ function fetchDataByPage($conn, $page, $itemsPerPage, $listSchedule, $link) {
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
     }
 
@@ -128,7 +129,8 @@ function fetchDataByPageSort($conn, $page, $itemsPerPage, $listSchedule, $sortOp
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
     }
     return $cards;
@@ -155,7 +157,8 @@ function fetchDataByPageFilter($conn, $page, $itemsPerPage, $listSchedule, $filt
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
     }
     return $cards;
@@ -187,7 +190,8 @@ function fetchDataBySortFilter($conn, $page, $itemsPerPage, $listSchedule, $sort
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
     }
     return $cards;
@@ -208,7 +212,8 @@ function fetchDataByPageAndSearch($conn, $page, $itemsPerPage, $searchTerm, $lis
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
     }
 
@@ -237,7 +242,8 @@ function fetchDataBySearchSort($conn, $page, $itemsPerPage, $searchTerm, $listSc
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
         // echo $row['resto_name'];
     }
@@ -266,7 +272,8 @@ function fetchDataBySearchFilter($conn, $page, $itemsPerPage, $searchTerm, $list
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
         // echo $row['resto_name'];
     }
@@ -300,7 +307,8 @@ function fetchDataBySearchSortFilter($conn, $page, $itemsPerPage, $searchTerm, $
             $row['address'],
             $row['rating'],
             $rowSchedule,
-            $linkto
+            $linkto,
+            $row['img_path']
         );
         // echo $row['resto_name'];
     }

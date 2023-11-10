@@ -16,12 +16,12 @@ function generateSchedule($rowSchedule) {
 
     return $scheduleRows;
 }
-function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPath) {
+function generateCard($name, $category, $address, $rating, $rowSchedule, $linkPath, $imgPath) {
     $scheduleRows = generateSchedule($rowSchedule);
 
     $card = <<<EOT
     <a href=$linkPath class="restaurant">
-        <img src="/public/assets/img/rest1.svg" alt="restoran" class="restaurant-img">
+        <img src="/public/assets/img/$imgPath" alt="restoran" class="restaurant-img">
         <div class="restaurant-info">
             <div class="restaurant-name">$name</div>
             <div class="restaurant-category">$category</div>

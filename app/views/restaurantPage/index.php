@@ -56,7 +56,7 @@ $schedule = new Schedule;
     ?>
     <section class="content">
         <section class="restaurant-video">
-            <video src="/public/assets/vid/nyam nyam kenyang.mp4" controls>
+            <video src="/public/assets/vid/<?php echo $restaurantData['vid_path']?>" controls>
         </section>
 
         <section class="restaurant-info">
