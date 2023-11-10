@@ -35,6 +35,11 @@ class Schedule {
         $query = "UPDATE $this->table SET resto_id = $resto_id WHERE schedule_id is NULL";
         return $query;
     }
+
+    public function updateScheduleByID($data, $resto_id) {
+        $query = "UPDATE $this->table SET day = '$data[day]', open_time = '$data[open_time]', close_time = '$data[close_time]' WHERE resto_id = $resto_id";
+        return $this->db->execute($query);
+    }
 }
 
 ?>

@@ -107,10 +107,14 @@ $page = "Add";
                 <div class="select-selected" id="selectedCategory">Indonesian</div>
                 <div class="select-items">
                     <div>Indonesian</div>
+                    <div>Western</div>
+                    <div>Italian</div>
                     <div>Chinese</div>
                     <div>Japanese</div>
                     <div>Korean</div>
-                    <div>Western</div>
+                    <div>Thai</div>
+                    <div>Indian</div>
+                    <div>Other</div>
                 </div>
                 <input type="hidden" id="category" name="category" value="Indonesian">
             </div>
