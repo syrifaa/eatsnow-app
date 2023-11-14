@@ -21,5 +21,10 @@ class User{
         $query = "UPDATE $this->table SET user_name = '$name', email = '$email', password = '$password', profile_img = '$profile_img'  WHERE email = '$previousemail'";
         $this->database->execute($query);
     }
+
+    public function updateUserSubs($email, $subs) {
+        $query = "UPDATE $this->table SET isSubs = $subs WHERE email = '$email'";
+        $this->database->execute($query);
+    }
 }
 ?>

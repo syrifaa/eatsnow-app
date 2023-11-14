@@ -38,27 +38,33 @@ $page = "Profile";
     <section class="container">
         <div class="profile">
             <form class="form" action="/api/updateProfile.php" method="POST" enctype="multipart/form-data">
-            <div class="image">
-                <div class="profile-container">
-                    <div id="profileImage">
-                        <img src="../../../public/assets/img/<?php echo $_SESSION['profile_photo']; ?>" alt="Profile Photo" id="profile-preview">
+                <div class="image">
+                    <div class="profile-container">
+                        <div id="profileImage">
+                            <img src="../../../public/assets/img/<?php echo $_SESSION['profile_photo']; ?>" 
+                                alt="Profile Photo" id="profile-preview">
+                        </div>
                     </div>
-                </div>
-                <input class="imageUpload" type="file" id="profile-img"
-                    name="profile_photo" accept=".jpg,.jpeg,.png" capture>
+                    <input class="imageUpload" type="file" id="profile-img"
+                        name="profile_photo" accept=".jpg,.jpeg,.png" capture>
                 </div>
                 <label for="name">Name</label><br>
                 <input type="text" class="input-form" name="name" value="<?php echo $_SESSION['name']?>" required><br>
                 <label for="email">Email</label><br>
                 <input type="email" class="input-form" name="email" value=<?php echo $_SESSION['email']?> required><br>
                 <label for="pw">Change Password</label><br>
-                <input type="password" class="input-form" name="password" value="<?php echo $_SESSION['password']?>" required><br>
+                <input type="password" class="input-form" name="password" 
+                    value="<?php echo $_SESSION['password']?>" required><br>
+
                 <div class="update-btn">
-                    <!-- <a href="#" type="submit" class="update">Update</a> -->
                     <input class="update" type="submit" name="update" value="Update" href="">
                 </div>
             </form>
         </div>
+        <form class="subs-form" action="/api/subscribe.php" method="POST">
+            <input class="subs" type="submit" name="subs" 
+                value=<?php $_SESSION['subs'] == 1 ? print "Unsubscribe" : print "Subscribe"?> href="">
+        </form>
     </section>
 <script>
 document.addEventListener("DOMContentLoaded", function() {

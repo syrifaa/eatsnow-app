@@ -21,7 +21,7 @@ if(isset($decoded['name']) && isset($decoded['email']) && isset($decoded['passwo
         echo "<script>location.href='/Login'</script>";
     }else{
         echo "<script type='text/javascript'> alert('Email already registered, Please use another email address'); </script>";
-        echo "<script>location.href='.Register'</script>";
+        echo "<script>location.href='/Register'</script>";
     }
 }
 ?>
