@@ -4,7 +4,7 @@
       private $statement;
       
         public function __construct(){
-            $this->conn = mysqli_connect("db", "user", "password", "eatsnow");
+            $this->conn = mysqli_connect("eatsnow-app-db", "user", "letmein", "eatsnow-app", 3306);
             if ($this->conn->connect_error) {
                 die("Connection failed: " . $this->conn->connect_error);
             }
