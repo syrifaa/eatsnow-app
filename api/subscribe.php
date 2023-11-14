@@ -22,6 +22,11 @@ if(isset($_SESSION['email'])) {
 }
 echo "<script>location.href='/Profile'</script>";
 
+/**
+ * User subscribe action
+ * @param User $user
+ * @param string $apiURL
+ */
 function subscribeAction($user, $apiURL) {
     try {
         $data = array(
@@ -55,6 +60,11 @@ function subscribeAction($user, $apiURL) {
     }
 }
 
+/**
+ * User Unsubscribe action
+ * @param User $user
+ * @param string $apiURL
+ */
 function unsubscribeAction($user, $apiURL) {
     try {
         $update = callAPI('DELETE', $apiURL . $_SESSION['email'], false);
