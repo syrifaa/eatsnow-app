@@ -5,6 +5,7 @@ if (!session_id()) { session_start(); }
 require_once 'app/models/Restaurant.php';
 require_once 'app/models/Food.php';
 include_once 'menuCard.php';
+include_once 'reviewCard.php';
 require_once 'app/models/schedule.php';
 $title = "EatsNow";
 $page = "RestaurantPage";
@@ -91,13 +92,35 @@ $schedule = new Schedule;
         </section>
 
         <div class="menu-label">Menu</div>
-        <!-- LIST OF MENU -->
         <div class="menu-list" id="menu-list">
+            <!-- LIST OF MENU -->
         </div>
+
         <div id="pagination">
             <!-- PAGING BUTTON -->
         </div>
+
+        <div class="menu-label">Rating & Review</div>
+        <div class="menu-list" id="review-list">
+            <!-- LIST OF REVIEW -->
+            <?php
+            echo generateReviewCard(
+                "../../../public/assets/img/profile-img.png",
+                "Keni",
+                4.5,
+                "ENAK PARAH"
+            );
+            echo generateReviewCard(
+                "../../../public/assets/img/profile-img.png",
+                "Keni",
+                4.5,
+                "ENAK PARAH"
+            );
+            ?>
+        </div>
+        
         <script src="../../../public/js/menu.js"></script>
+        <script src="../../../public/js/review.js"></script>
     </section>
     <a href="/Restaurants" id="back-btn">
         <img src="../../../public/assets/img/back.png" alt="img">
