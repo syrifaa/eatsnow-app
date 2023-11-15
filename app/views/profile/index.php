@@ -61,10 +61,14 @@ $page = "Profile";
                 </div>
             </form>
         </div>
-        <form class="subs-form" action="/api/subscribe.php" method="POST">
-            <input class="subs" type="submit" name="subs" 
-                value=<?php $_SESSION['subs'] == 1 ? print "Unsubscribe" : print "Subscribe"?> href="">
-        </form>
+        <?php if ($_SESSION['role'] == 0) { ?>
+            <form class="subs-form" action="/api/subscribe.php" method="POST">
+                <input 
+                    class="subs" type="submit" name="subs" href=""
+                    value=<?php echo $_SESSION['subs'] == 0 ? "Subscribe" : "Unsubscribe";?>
+                >
+            </form>
+        <?php } ?>
     </section>
 <script>
 document.addEventListener("DOMContentLoaded", function() {

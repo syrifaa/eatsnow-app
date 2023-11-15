@@ -15,18 +15,11 @@ function callAPI($method, $url, $data)
     ));
     switch ($method) {
         case "POST":
-            var_dump($data);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-                'Content-Type: application/json',
-            ));
+            curlSetPostFields($data, $curl);
             break;
 
         case "PUT":
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-                'Content-Type: application/json',
-            ));
+            curlSetPostFields($data, $curl);
             break;
 
         default:
@@ -46,6 +39,13 @@ function callAPI($method, $url, $data)
     $response_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     curl_close($curl);
     return [$result, $response_code];
+}
+
+function curlSetPostFields($postData, $curl) {
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+    ));
 }
 
 ?>

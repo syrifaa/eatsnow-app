@@ -53,6 +53,7 @@ function subscribeAction($user, $apiURL) {
                 echo "<script type='text/javascript'> alert('Email already registered!'); </script>";
                 break;
             default:
+                echo "<script type='text/javascript'> alert('$update[1]'); </script>";
                 break;
         }
     } catch (Exception $e) {

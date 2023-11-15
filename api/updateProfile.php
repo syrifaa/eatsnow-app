@@ -8,7 +8,7 @@ $user = new User;
 $APIURL = 'http://eatsnow-rest:8010/api/user/';
 
 if(isset($_SESSION['email'])) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SESSION['role'] == 0) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
