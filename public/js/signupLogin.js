@@ -18,12 +18,10 @@ const cekEmail = () => {
     if (!validasiEmail(email)) {
         document.getElementById("email").style.border = "1px solid red";
         document.getElementById("emailError").innerHTML = "Email not valid";
-        // return false;
     }
     else{
         document.getElementById("email").style.border = "none";
         document.getElementById("emailError").innerHTML = "";
-        // return true;
     }
     cekAll();
 }
@@ -50,22 +48,18 @@ const cekPassword = () => {
     if (password.length == 0){
         document.getElementById("password").style.border = "none";
         document.getElementById("passwordError").innerHTML = "";
-        // return false;
     }
     else if (password.length < 8) {
         document.getElementById("password").style.border = "1px solid red";
         document.getElementById("passwordError").innerHTML = "Password must have 8 characters";
-        // return false;
     }
     else if (!validasiPassword(password)) {
         document.getElementById("password").style.border = "1px solid red";
         document.getElementById("passwordError").innerHTML = "Must have uppercase letter, lowercase letter & number";
-        // return false;
     }
     else{
         document.getElementById("password").style.border = "none";
         document.getElementById("passwordError").innerHTML = "";
-        // return true;
     }
     cekAll();
 }

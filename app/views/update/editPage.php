@@ -24,7 +24,7 @@ $dataResto = mysqli_fetch_array($row);
     <link rel="stylesheet" href="../../../public/css/editMenu.css"/>
 </head>
 <body>
-    <a href="../update/index.php" id="close-btn">
+    <a href="/Update" id="close-btn">
         <img src="../../../public/assets/img/cross.png" alt="img">
     </a>
     <form class="container" action="/api/editRestaurant.php" method="POST" enctype="multipart/form-data">
@@ -158,7 +158,6 @@ $dataResto = mysqli_fetch_array($row);
     document.addEventListener("DOMContentLoaded", function() {
         setupImageUpload('#imgUpload', '.imgUpload');
         setupImageUpload('#videoUpload', '.videoUpload');
-        // setupImageUpload('#menuUpload', '.menuUpload');
     });
 </script>
 <script src="../../../public/js/preview.js"></script>

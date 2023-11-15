@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sundayOpen = $_POST['sunday-open'];
     $sundayClose = $_POST['sunday-close'];
     $rating = $_POST['rating'];
-    // $category = isset($_GET['selectedCategory']) ? $_GET['selectedCategory'] : 'null';
+    
     $category = $_POST['category'];
     $review = $_POST['review'];
     $resto_img = $_FILES['restaurant-img']['name'];
@@ -53,28 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>"; 
         }
     }
-
-    // echo $restoName;
-    // echo $location;
-    // echo $mondayOpen;
-    // echo $mondayClose;
-    // echo $tuesdayOpen;
-    // echo $tuesdayClose;
-    // echo $wednesdayOpen;
-    // echo $wednesdayClose;
-    // echo $thursdayOpen;
-    // echo $thursdayClose;
-    // echo $fridayOpen;
-    // echo $fridayClose;
-    // echo $saturdayOpen;
-    // echo $saturdayClose;
-    // echo $sundayOpen;
-    // echo $sundayClose;
-    // echo $rating;
-    // echo $review;
-    // echo $category;
-    // echo $resto_img;
-    // echo $resto_vid;
 
     $resto->insertRestaurant($restoName, $review, $location, $rating, $resto_img, $resto_vid, $category);
         $id = $resto->getLastID();

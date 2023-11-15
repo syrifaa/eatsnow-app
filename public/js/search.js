@@ -43,9 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedFilterOption = this.getAttribute("data-filter");
             selectedTypeOption = this.getAttribute("type");
 
-            // console.log(selectedFilterOption);
-            // console.log(selectedTypeOption);
-
             updateTable();
         });
     });
@@ -71,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pagination.appendChild(prevButton);
         }
 
-        //first
+        // first
         const firstButton = document.createElement("button");
         firstButton.textContent = "First";
         firstButton.addEventListener("click", () => {
@@ -90,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pagination.appendChild(button);
         }
 
-        //last
+        // last
         const lastButton = document.createElement("button");
         lastButton.textContent = "Last";
         lastButton.addEventListener("click", () => {
@@ -112,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateTable() {
         const searchQuery = searchInput.value.trim();
-        // console.log(searchQuery);
         
         const xhr = new XMLHttpRequest();
         xhr.open("GET", `../../../api/search.php?page=${currentPage}&search=${searchQuery}&sort_option=${selectedSortOption}&cat_option=${selectedCatOption}&filter_option=${selectedFilterOption}&type_option=${selectedTypeOption}&action=user`, true);

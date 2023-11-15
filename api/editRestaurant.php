@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sundayOpen = $_POST['sunday-open'];
     $sundayClose = $_POST['sunday-close'];
     $rating = $_POST['rating'];
-    // $category = isset($_GET['selectedCategory']) ? $_GET['selectedCategory'] : 'null';
+    
     $category = $_POST['category'];
     $review = $_POST['review'];
     $resto_img = $_FILES['restaurant-img']['name'];
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $food->insertFoodToResto($resto_id);
     echo "<script type='text/javascript'> alert('Restaurant Updated Successfully'); </script>";
-    echo "<script>location.href='../app/views/update/index.php'</script>";
+    echo "<script>location.href='/Update'</script>";
 }
 
 ?>

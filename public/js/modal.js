@@ -127,12 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.body.addEventListener('click', function(event) {
 
-      // console.log(id);
-      // console.log(name);
-      // console.log(price);
-      // console.log(desc);
-      // console.log(path);
-
       // Check if the clicked element has the ID "edit-menu"
       if (event.target.id === 'edit-menu') {
         var menu = event.target.parentElement;

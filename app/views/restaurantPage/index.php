@@ -11,9 +11,6 @@ $page = "RestaurantPage";
 
 $schedule = new Schedule;
 
-// $photo = ($row['img_path'] == NULL) ? "/public/assets/img/rest1.svg" : $row['img_path'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +23,6 @@ $schedule = new Schedule;
     <link rel="stylesheet" type="text/css" href="/public/css/restaurantPage.css"/>    
     <link rel="stylesheet" type="text/css" href="/public/css/menuCard.css"/>    
     <link rel="stylesheet" type="text/css" href="../public/css/restaurantCard.css" />
-    <!-- <script src='main.js'></script> -->
 </head>
 <body>
     <?php 

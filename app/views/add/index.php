@@ -1,5 +1,4 @@
 <?php
-// include_once 'editMenu.php';
 if (!isset($_SESSION)) { session_start(); }
 $title = "EatsNow";
 $page = "Add";
@@ -144,7 +143,6 @@ $page = "Add";
     document.addEventListener("DOMContentLoaded", function() {
         setupImageUpload('#imgUpload', '.imgUpload');
         setupImageUpload('#videoUpload', '.videoUpload');
-        // setupImageUpload('#menuUpload', '.menuUpload');
     });
 </script>
 <script src="../../../public/js/preview.js"></script>

@@ -19,14 +19,14 @@ if($action == 'user'){
 }
 
 function calculateTotalPages($conn, $itemsPerPage) {
-    $query = "SELECT COUNT(*) as total FROM restaurant"; // Sesuaikan dengan nama tabel Anda
+    $query = "SELECT COUNT(*) as total FROM restaurant";
     $result = $conn->execute($query);
     $totalRows = mysqli_fetch_assoc($result)['total'];
     return ceil($totalRows / $itemsPerPage);
 }
 
 function calculateTotalPagesBySearch($conn, $itemsPerPage, $searchTerm) {
-    $query = "SELECT COUNT(*) as total FROM restaurant WHERE resto_name LIKE '%$searchTerm%' OR address LIKE '%$searchTerm%'"; // Sesuaikan dengan nama tabel Anda
+    $query = "SELECT COUNT(*) as total FROM restaurant WHERE resto_name LIKE '%$searchTerm%' OR address LIKE '%$searchTerm%'";
     $result = $conn->execute($query);
     $totalRows = mysqli_fetch_assoc($result)['total'];
     return ceil($totalRows / $itemsPerPage);
@@ -87,9 +87,9 @@ function calculateTotalPagesBySearchSortFilter($conn, $itemsPerPage, $searchTerm
 
 function fetchDataByPage($conn, $page, $itemsPerPage, $listSchedule, $link) {
     $offset = ($page - 1) * $itemsPerPage;
-    $query = "SELECT * FROM restaurant LIMIT $offset, $itemsPerPage"; // Sesuaikan dengan nama tabel Anda
+    $query = "SELECT * FROM restaurant LIMIT $offset, $itemsPerPage";
     $result = $conn->execute($query);
-    // echo $result;
+    
     $cards = array();
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
@@ -199,7 +199,7 @@ function fetchDataBySortFilter($conn, $page, $itemsPerPage, $listSchedule, $sort
 
 function fetchDataByPageAndSearch($conn, $page, $itemsPerPage, $searchTerm, $listSchedule, $link) {
     $offset = ($page - 1) * $itemsPerPage;
-    $query = "SELECT * FROM restaurant WHERE resto_name LIKE '%$searchTerm%' OR address LIKE '%$searchTerm%' LIMIT $offset, $itemsPerPage"; // Sesuaikan dengan nama tabel Anda dan nama kolom yang sesuai
+    $query = "SELECT * FROM restaurant WHERE resto_name LIKE '%$searchTerm%' OR address LIKE '%$searchTerm%' LIMIT $offset, $itemsPerPage";
     $result = $conn->execute($query);
     $cards = array();
 
@@ -231,7 +231,7 @@ function fetchDataBySearchSort($conn, $page, $itemsPerPage, $searchTerm, $listSc
     $query .= " LIMIT $offset, $itemsPerPage";
     $result = $conn->execute($query);
     $cards = array();
-    // echo $query;
+    
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
@@ -245,7 +245,7 @@ function fetchDataBySearchSort($conn, $page, $itemsPerPage, $searchTerm, $listSc
             $linkto,
             $row['img_path']
         );
-        // echo $row['resto_name'];
+        
     }
     return $cards;
 }
@@ -261,7 +261,7 @@ function fetchDataBySearchFilter($conn, $page, $itemsPerPage, $searchTerm, $list
     $query .= " LIMIT $offset, $itemsPerPage";
     $result = $conn->execute($query);
     $cards = array();
-    // echo $query;
+    
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
@@ -275,7 +275,7 @@ function fetchDataBySearchFilter($conn, $page, $itemsPerPage, $searchTerm, $list
             $linkto,
             $row['img_path']
         );
-        // echo $row['resto_name'];
+        
     }
     return $cards;
 }
@@ -296,7 +296,7 @@ function fetchDataBySearchSortFilter($conn, $page, $itemsPerPage, $searchTerm, $
     $query .= " LIMIT $offset, $itemsPerPage";
     $result = $conn->execute($query);
     $cards = array();
-    // echo $query;
+    
 
     while($row = mysqli_fetch_assoc($result)) {
         $rowSchedule = $listSchedule->getSchedule($row['resto_id']);
@@ -310,7 +310,7 @@ function fetchDataBySearchSortFilter($conn, $page, $itemsPerPage, $searchTerm, $
             $linkto,
             $row['img_path']
         );
-        // echo $row['resto_name'];
+        
     }
     return $cards;
 }

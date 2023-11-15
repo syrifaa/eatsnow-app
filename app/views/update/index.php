@@ -4,7 +4,7 @@ include_once 'app/views/restaurants/sortButton.php';
 include_once 'app/views/restaurants/filterButton.php';
 require_once 'app/models/restaurant.php';
 require_once 'app/models/schedule.php';
-// require_once '../restaurants/restaurantCard.php';
+
 $title = "EatsNow";
 $page = "Update";
 ?>

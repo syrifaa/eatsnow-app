@@ -21,8 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             move_uploaded_file($profile_img_tmp, "../public/assets/img/$profile_img");
         }
     }
-    // echo "<script>location.href='../app/views/add/index.php'</script>";
-    // echo "<script>location.href='#menu-list-container'</script>";
     echo "<script>
     setTimeout(function () {
         window.history.back();
@@ -52,14 +50,6 @@ while ($dataRestaurant = mysqli_fetch_array($rowRestaurant)) {
     );
 }
 
-
-
-// echo "id" . $id;
-// echo "name" . $name;
-// echo "price" . $price;
-// echo "desc" . $desc;
-// echo "path" . $path;
-
 function generateCard($id, $name, $desc, $price, $path) {
     $card = <<<EOT
     <div class="menu" data-id=$id>
@@ -74,10 +64,6 @@ function generateCard($id, $name, $desc, $price, $path) {
     </div>
     EOT;
     echo $card;
-    // echo $id;
-    // echo $name;
-    // echo $desc;
-    // echo $price;
-    // echo $path;
+
 }
 ?>

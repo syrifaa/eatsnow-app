@@ -13,7 +13,7 @@ class Restaurant {
     {
         $query = "SELECT * FROM $this->table";
         return $this->db->execute($query);
-        // return $query;
+        
     }
 
     public function getRestaurant($id)
@@ -32,21 +32,18 @@ class Restaurant {
     public function sortRestaurantByName($order)
     {
         $query = " ORDER BY resto_name $order";
-        // return $this->db->execute($query);
         return $query;
     }
 
     public function sortRestaurantByRating($order)
     {
         $query = " ORDER BY rating $order";
-        // return $this->db->execute($query);
         return $query;
     }
 
     public function filterRestaurantByRating($rating)
     {
         $query = " WHERE rating >= $rating";
-        // return $this->db->execute($query);
         return $query;
     }
 
@@ -59,7 +56,6 @@ class Restaurant {
     public function filterRestaurantByCategory($category)
     {
         $query = " WHERE category = '$category'";
-        // return $this->db->execute($query);
         return $query;
     }
 
@@ -70,8 +66,12 @@ class Restaurant {
 
     public function insertRestaurant($resto_name, $resto_desc, $address, $rating, $img_path, $vid_path, $category) {
         $query = "INSERT INTO $this->table (resto_name, resto_desc, address, rating, img_path, vid_path, category) VALUES ('$resto_name', '$resto_desc', '$address', $rating, '$img_path', '$vid_path', '$category')";
-        // return $query;
         $this->db->execute($query);
+    }
+
+    public function deleteRestaurant($id) {
+        $query = "DELETE FROM $this->table WHERE resto_id = $id";
+        return $this->db->execute($query);
     }
 
     public function getLastID() {

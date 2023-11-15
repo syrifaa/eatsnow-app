@@ -15,7 +15,7 @@ function calculateTotalPages($itemsPerPage, $restoID){
     $row = mysqli_fetch_row($result);
     $totalItems = $row[0];
     $totalPages = ceil($totalItems / $itemsPerPage);
-    // echo "total halaman: -----------$totalPages";
+
     return $totalPages;
 }
 
@@ -23,9 +23,9 @@ function fetchDataByPage($con, $page, $itemsPerPage, $restoID){
 
     $offset = ($page - 1) * $itemsPerPage;
     $query = "SELECT * FROM food WHERE (resto_id = $restoID) LIMIT $offset, $itemsPerPage";
-    // echo $query;
+
     $result = $con->execute($query);
-    // echo $result;
+
     $cards = array();
     $counter = 0;
     while($row = mysqli_fetch_assoc($result)){
@@ -37,7 +37,7 @@ function fetchDataByPage($con, $page, $itemsPerPage, $restoID){
         );
         $counter++;
     }
-    // echo "counter: $counter";
+
     return $cards;
 }
 
