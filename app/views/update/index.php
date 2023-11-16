@@ -18,6 +18,7 @@ $page = "Update";
     <link rel="icon" type="image/png" href="../../../public/assets/img/logo.png"/>
     <link rel="stylesheet" type="text/css" href="../../../public/css/sortFilter.css" />
     <link rel="stylesheet" href="../../../public/css/update.css"/>
+    <link rel="stylesheet" href="../../../public/css/sidebar.css"/>
     <link rel="stylesheet" href="../../../public/css/restaurantCard.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="../../../public/js/sortButton.js"></script>
