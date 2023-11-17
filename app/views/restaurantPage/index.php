@@ -99,20 +99,6 @@ $schedule = new Schedule;
         <div class="menu-label">Rating & Review</div>
         <div class="menu-list" id="review-list">
             <!-- LIST OF REVIEW -->
-            <?php
-            echo generateReviewCard(
-                "../../../public/assets/img/profile-img.png",
-                "Keni",
-                4.5,
-                "ENAK PARAH"
-            );
-            echo generateReviewCard(
-                "../../../public/assets/img/profile-img.png",
-                "Keni",
-                4.5,
-                "ENAK PARAH"
-            );
-            ?>
         </div>
         
         <script src="../../../public/js/menu.js"></script>
