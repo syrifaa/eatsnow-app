@@ -22,6 +22,11 @@ Daftar fitur:
    * Update Restaurant Information for Admin
    * Add Restaurant for Admin
 
+## Update v2.0
+- Admin mampu untuk __mengedit__ jumlah voucher
+- Pengguna mampu untuk __melihat review__ dari user premium
+- Pengguna mampu untuk berlangganan dan langsung mendapatkan akun ke aplikasi EatsNow Premium
+
 ## Requirements
 [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
