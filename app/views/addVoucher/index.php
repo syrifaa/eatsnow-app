@@ -1,5 +1,4 @@
 <?php
-include_once 'voucherCard.php';
 $title = "EatsNow";
 $page = "Add Voucher";
 ?>
@@ -16,7 +15,7 @@ $page = "Add Voucher";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
-<section class="sidebar">
+    <section class="sidebar">
         <a href="/Home" class="logo">
             <img src="../../../public/assets/img/logo1.png"/>
         </a>
@@ -25,20 +24,21 @@ $page = "Add Voucher";
     <section class="content">
         <div id ="menu-btn" class="fas fa-bars"></div>
         <div class="voucher-list">
-        <?php
-            echo generateVoucherCard(
-                "Voucher 1",
-                100            );
-            echo generateVoucherCard(
-                "Voucher 2",
-                200
-            );
-            ?>
+        <!-- <?php
+            // echo generateVoucherCard(
+            //     "Voucher 1",
+            //     100            );
+            // echo generateVoucherCard(
+            //     "Voucher 2",
+            //     200
+            // );
+            ?> -->
         </div>
     </section>
-    <a href="AddVoucher/Add" id="add-btn">
+    <a id="add-btn">
         <img src="../../../public/assets/img/add.png" alt="img">
     </a>
+    <div class="dialog-overlay"></div>
 <script src="../../../public/js/sidebar.js"></script>
 <script src="../../../public/js/voucher.js"></script>
 </body>
