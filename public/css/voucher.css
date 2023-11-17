@@ -70,7 +70,7 @@
     overflow: auto;
     border-radius: 30px;
 }
-.voucher-edit  .body-text{
+.body-text{
 margin-top:20px;
 }
 .voucher-edit  .body-text img{
@@ -88,11 +88,17 @@ text-align:justify;
     align-items: center;
     justify-content: space-around;
 }
-@keyframes slide_up{
-    0%{
-      transform: translateY(500px);
-    }
-    100%{
-      transform: translateY(0px);
-    }
+.dialog-overlay{
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    width: 50%; 
+    overflow: auto; 
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 3;
+    box-shadow: 0 0 10px black;
+    overflow: auto;
+    border-radius: 30px;
 }
